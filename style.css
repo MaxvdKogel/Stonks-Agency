@@ -1,0 +1,227 @@
+:root {
+    --dark: #14161C;
+    --highlight: #FDB5F1;
+    --white: #FFFFFF;
+
+    --f-regular: 400;
+    --f-semi-bold: 600;
+    --f-bold: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 80%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.s-between {
+    justify-content: space-between;
+}
+
+.center {
+    justify-content: center;
+}
+
+header, section {
+    background-color: var(--dark);
+    color: var(--white);
+
+    /* horizontal center in container */
+
+    display: flex;
+    justify-content: center;
+}
+
+.pink {
+    color: var(--highlight);
+}
+
+/* --------------- header ------------ */
+
+header {
+    padding: 20px 0;
+}
+
+.header {
+    align-items: center;
+}
+
+.logo h1{
+    font-size: 28px;
+    font-weight: var(--f-bold);
+}
+
+.line {
+    width: 100%;
+    background-color: var(--highlight);
+    height: 3px;
+}
+
+.hamburger {
+    height: 20px;
+    position: relative;
+}
+
+.hamburger__line {
+    display: block;
+    width: 45px;
+    height: 5px;
+    background-color: white;
+    border-radius: 100px;
+}
+
+.bottom-line {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--highlight);
+}
+
+/* ------------ hero -------------- */
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 125px;
+}
+
+.sleeping-cat {
+    max-width: 90%;
+    max-height: 30%;
+    margin: 5vh 0;
+}
+
+.hero__title {
+    font-size: 32px;
+    font-weight: var(--f-semi-bold);
+    margin-bottom: 0.5em;
+}
+
+.hero__txt {
+    font-size: 18px;
+    font-weight: var(--f-regular);
+    margin-bottom: 3em;
+}
+
+.hero__cta {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: var(--f-bold);
+    border: 3px solid var(--highlight);
+    padding: 0.5em 1.5em;
+    border-radius: 15px;
+}
+
+.cta__container {
+    width: 100%;
+}
+
+/* -------------- recente projecten ------------- */
+
+.phoneroyal__title, .vastgoed__title {
+    font-size: 32px;
+    font-weight: var(--f-semi-bold);
+    margin-bottom: 0.5em;
+}
+
+.phoneroyal__txt, .vastgoed__txt {
+    font-size: 18px;
+    font-weight: var(--f-regular);
+}
+
+.phoneroyal__cta, .vastgoed__cta {
+    color: white;
+    text-decoration: none;
+    border: 3px solid var(--highlight);
+    padding: 0.5em 1.5em;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: var(--f-bold);
+}
+
+.phoneroyal__cta-div, .vastgoed__cta-div {
+    margin-top: 2em;
+    margin-bottom: 100px;
+    width: 110%;
+}
+
+/* intro */
+
+.recent-projects {
+    display: flex;
+    margin-bottom: 150px;
+}
+
+.recent-projects__title-div {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    z-index: 1;
+}
+
+.recent-projects__title {
+    font-size: 28px;
+    font-weight: var(--f-semi-bold);
+}
+
+.standing-cat {
+    width: 60%;
+    transform: translateX(10%);
+}
+
+/* phoneroyal */
+
+.phone {
+    width: 100%;
+}
+
+hr {
+    width: 1px;
+    height: 100px;
+    display: inline-block;
+    border-color: var(--highlight);
+    margin-bottom: 100px;
+}
+
+/* vastgoed */
+
+.vastgoed__col {
+    text-align: right;
+    transform: translateY(115px);
+}
+
+.vastgoed__cta-div {
+    width: 100%;
+    margin-bottom: 215px;
+}
+
+.desktop {
+    position: absolute;
+}
+
+
+@media screen and (max-width: 335px){
+    .hero__title {
+        font-size: 28px;
+    }
+
+    .hero__txt {
+        font-size: 16px;
+        margin-bottom: 1.5em;
+    }
+
+    .sleeping-cat {
+        margin-bottom: 5vh;
+        width: 80%;
+    }
+}
