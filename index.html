@@ -7,7 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <title>Achoendov Media</title>
 </head>
 <body>
 
@@ -198,21 +203,23 @@
     <!------------------ Wie zijn wij? ---------------->
 
     <section class="about-us">
-        <div class="container">
-            <h2 class="about-us__title">Wij zijn Achoendov Media</h2>
-            <p>Een creatief duo die jouw online aanwezigheid een boost geeft. Van websites tot web software.</p>
-            <p>Wij hebben twee dingen gemeen, we houden beide van web development en natuurlijk van katten.</p>
+        <div class="container about-us__container">
+          <h2 class="about-us__title">Wij zijn <span class="achoendov">Achoendov</span> <span class="media">Media</span></h2>
+          <p class="about-us__p1">Een creatief duo die jouw online aanwezigheid een boost geeft. Van websites tot web software.</p>
+          <p class="about-us__p2">Wij hebben twee dingen gemeen, we houden beide van web development en natuurlijk van katten.</p>
         </div>
     </section>
 
     <!------------------- contacteer ons --------------->
 
     <section class="contact">
-        <div class="container">
+        <div class="container contact__container">
             <div class="cat-licking"></div>
-            <h2 class="contact__title">Wil jij ook in je bedrijf investeren?</h2>
+            <h2 class="contact__title">Klaar om in je bedrijf te investeren?</h2>
             <p>Samen maken we er iets moois van.</p>
-            <a class="contact__cta">Contacteer ons</a>
+            <div class="contact__cta-div">
+              <a class="contact__cta">Contacteer ons</a>
+            </div>
         </div>
     </section>
 </body>
