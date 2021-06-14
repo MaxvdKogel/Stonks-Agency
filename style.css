@@ -1,6 +1,7 @@
 :root {
     --dark: #14161C;
     --highlight: #FDB5F1;
+    --cta: #ff9cee;
     --white: #FFFFFF;
 
     --f-regular: 400;
@@ -48,6 +49,58 @@ header, section {
 
 .pink {
     color: var(--highlight);
+}
+
+/* ----- cursor and hovers ----- */
+
+.cursor {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background-color: var(--cta);
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.cta {
+    --width: 100%;
+	--time: 0.7s;
+
+    position: relative;
+	display: inline-block;
+    overflow: hidden;
+}
+
+.cta text {
+    z-index: 5;
+    position: relative
+}
+
+.cta__hover span{
+    position: absolute;
+    display: block;
+    content: "";
+    z-index: 0;
+    width: 0;
+    height: 0;
+
+    border-radius: 100%;
+    background: var(--cta);
+    transform: translate(-50%, -50%);
+    transition: width var(--time), padding-top var(--time);
+}
+
+.cta:hover span {
+    width: calc(var(--width) * 2.25);
+    padding-top: calc(var(--width) * 2.25);
+}
+
+.hide-cursor {
+    opacity: 0;
 }
 
 /* --------------- header ------------ */
@@ -122,7 +175,7 @@ header {
     text-decoration: none;
     font-size: 18px;
     font-weight: var(--f-bold);
-    border: 3px solid var(--highlight);
+    border: 3px solid var(--cta);
     padding: 0.5em 1.5em;
     border-radius: 15px;
 }
@@ -286,7 +339,7 @@ hr {
 .contact__cta {
     font-size: 18px;
     font-weight: var(--f-bold);
-    border: 3px solid var(--highlight);
+    border: 3px solid var(--cta);
     padding: 0.5em 1.5em;
     border-radius: 15px;
 }
@@ -663,7 +716,7 @@ hr {
 
     .desktop-project {
         display: flex;
-        width: 80%;
+        width: 90%;
         justify-content: space-between;
     }
 
@@ -688,13 +741,13 @@ hr {
     
     .client h2 {
         color: var(--white);
-        font-size: 45px;
+        font-size: 40px;
         font-weight: var(--f-semi-bold);
         margin-top: 1rem;
     }
 
     .desktop-projects__description {
-        width: 30%;;
+        width: 35%;;
         position: relative;
     }
 
@@ -705,6 +758,7 @@ hr {
     }
 
     .description {
+        font-size: 14px;
         position: absolute;
         bottom: 0;
         padding: 1em 0;
@@ -750,5 +804,19 @@ hr {
     
     .contact__container {
         justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .client h2 {
+        font-size: 45px;
+    }
+
+    .desktop-projects__description {
+        width: 30%;;
+    }
+
+    .desktop-project {
+        width: 80%;
     }
 }

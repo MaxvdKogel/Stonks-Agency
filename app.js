@@ -1,3 +1,27 @@
+// ----------------- cursor -----------------------
+
+var cursor = document.querySelector(".cursor");
+  document.addEventListener('mousemove', function(e){
+  cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;"
+});
+
+// ------------------- hovers ---------------------
+
+const ctas = document.querySelector(".cta");
+const cta_span = document.querySelector(".cta__span");
+
+ctas.addEventListener("mouseover", e => {
+    cta_span.style.left = e.pageX - ctas.offsetLeft + "px";
+    cta_span.style.top = e.pageY - ctas.offsetTop + "px";
+    cursor.classList.add("hide-cursor");
+});
+
+ctas.addEventListener("mouseout", e => {
+    cta_span.style.left = e.pageX - ctas.offsetLeft + "px";
+    cta_span.style.top = e.pageY - ctas.offsetTop + "px";
+    cursor.classList.remove("hide-cursor");
+});
+
 // ------------ lottie animations ------------------
 
 const sleepingCat = bodymovin.loadAnimation({
