@@ -17,7 +17,7 @@
 
 .container {
     width: 80%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .d-flex {
@@ -30,6 +30,10 @@
 
 .center {
     justify-content: center;
+}
+
+.phone-hidden {
+    display: none;
 }
 
 header, section {
@@ -594,5 +598,157 @@ hr {
 }
 
 @media screen and (min-width: 1200px) {
+
+    /* header */
+
+    .header {
+        margin-top: 25px;
+    }
+
+    /* hero */
+
+    .hero {
+        height: 75vh;
+    }
+
+    .sleeping-cat {
+        width: 38%;
+    }
     
+    .hero__col {
+        width: 58%;
+    }
+
+    .hero__title {
+        font-size: 60px;
+    }
+    
+    .hero__txt {
+        font-size: 22px;
+    }
+    
+    .hero__cta {
+        font-size: 22px;
+    }
+
+    /* recente projecten */
+
+    .phone-hidden {
+        display: unset;
+    }
+
+    /* intro */
+
+    .recent-projects__title {
+        font-size: 60px;
+    }
+
+    .recent-projects {
+        justify-content: center;
+    }
+
+    .recent-projects__title-div {
+        width: 40%;
+    }
+    
+    .standing-cat {
+        width: 25%;
+    }
+
+    /* projects */
+
+    .desktop-hidden {
+        display: none;
+    }
+
+    .desktop-project {
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+    }
+
+    .desktop-projects {
+        width: 100%;
+        position: relative;
+    }
+
+    .project-line {
+        width: 100%;
+        height: 2px;
+        background-color: #707070;
+        margin: 2rem 0 5rem 0;
+    }
+
+    .client {
+        color: #ABABAB;
+        font-weight: var(--f-semi-bold);
+        font-size: 25px;
+        width: 60%;
+    }
+    
+    .client h2 {
+        color: var(--white);
+        font-size: 45px;
+        font-weight: var(--f-semi-bold);
+        margin-top: 1rem;
+    }
+
+    .desktop-projects__description {
+        width: 30%;;
+        position: relative;
+    }
+
+    .description__title {
+        color: #ABABAB;
+        font-weight: var(--f-semi-bold);
+        font-size: 22px;
+    }
+
+    .description {
+        position: absolute;
+        bottom: 0;
+        padding: 1em 0;
+        font-weight: var(--f-semi-bold);
+    }
+
+    .year {
+        float: right;
+        color:#ABABAB;
+        font-size: 22px;
+    }
+
+    /* about us */
+    
+    .about-us__title {
+        font-size: 65px;
+        width: 30%;
+        margin-top: 150px;
+    }
+
+    .about-us p {
+        font-size: 30px;
+        width: 40%;
+    }
+
+    /* contact */
+
+    .contact {
+        height: 90vh;
+    }
+    
+    .contact__title {
+        font-size: 60px;
+    }
+
+    .cat-licking {
+        width: 38%;
+    }
+    
+    .contact__col {
+        width: 48%;
+    }
+    
+    .contact__container {
+        justify-content: space-between;
+    }
 }
