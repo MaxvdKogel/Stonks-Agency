@@ -1,7 +1,18 @@
-import React from "react";
-import "../css/Hero.module.css";
+import React, { useEffect } from "react";
+import lottie from 'lottie-web';
 
 const Hero = function() {
+
+    useEffect(() => {
+      lottie.loadAnimation({
+        container: document.querySelector('.sleeping-cat'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/assets/lottie-animations/slapende-kat-final-2.json'
+      })  
+    }, [])
+
     return (
         <section className="hero">
             <div className="container hero__container">
