@@ -7,6 +7,7 @@ module.exports = {
         filename: "bundle.js", // string (default)
         publicPath: "/assets/", // string
         path: path.resolve(__dirname, 'public'),
+        
     },
     module: {
         rules: [
@@ -24,6 +25,16 @@ module.exports = {
                     options: {
                         presets: ['@babel/preset-env', "@babel/preset-react"]
                     }
+                }
+            },
+            {
+                test: /.svg$/,
+                use: ['@svgr/webpack'],
+            },
+            {       
+                test: /.(svg|png|jpeg|jpg|gif)$/,
+                use: {       
+                    loader: "file-loader" 
                 }
             }
         ]
