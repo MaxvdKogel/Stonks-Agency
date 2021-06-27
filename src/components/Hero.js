@@ -4,14 +4,30 @@ import lottie from 'lottie-web';
 const Hero = function() {
 
     useEffect(() => {
-      lottie.loadAnimation({
-        container: document.querySelector('.sleeping-cat'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: '/assets/lottie-animations/slapende-kat-final-2.json'
-      })  
-    }, [])
+        const cursor = document.querySelector(".cursor");
+        const hero_cta = document.querySelector(".hero__cta");
+        const hero_cta_span = document.querySelector(".hero__cta-span");
+
+        hero_cta.addEventListener("mouseover", e => {
+            hero_cta_span.style.left = e.pageX - hero_cta.offsetLeft + "px";
+            hero_cta_span.style.top = e.pageY - hero_cta.offsetTop + "px";
+            cursor.classList.add("hide-cursor");
+        });
+
+        hero_cta.addEventListener("mouseout", e => {
+            hero_cta_span.style.left = e.pageX - hero_cta.offsetLeft + "px";
+            hero_cta_span.style.top = e.pageY - hero_cta.offsetTop + "px";
+            cursor.classList.remove("hide-cursor");
+        });
+
+        lottie.loadAnimation({
+            container: document.querySelector('.sleeping-cat'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '/assets/lottie-animations/slapende-kat-final-2.json'
+          })
+    }, []);
 
     return (
         <section className="hero">

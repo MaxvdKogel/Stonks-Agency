@@ -113,10 +113,6 @@ header, section {
     padding-top: calc(var(--width) * 2.25);
 }
 
-.hide-cursor {
-    opacity: 0;
-}
-
 /* --------------- header ------------ */
 
 header {
@@ -715,6 +711,10 @@ hr {
 
     .cursor {
         opacity: 1;
+    }
+
+    .hide-cursor {
+        opacity: 0;
     }
 
     /* header */

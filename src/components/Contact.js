@@ -4,6 +4,22 @@ import lottie from "lottie-web"
 const Contact = function() {
 
     useEffect(() => {
+        const cursor = document.querySelector(".cursor");
+        const contact_cta = document.querySelector('.contact__cta');
+        const contact_cta_span = document.querySelector('.contact__cta-span');
+
+        contact_cta.addEventListener("mouseover", e => {
+            contact_cta_span.style.left = e.pageX - contact_cta.offsetLeft + "px";
+            contact_cta_span.style.top = e.pageY - contact_cta.offsetTop + "px";
+            cursor.classList.add("hide-cursor");
+        });
+
+        contact_cta.addEventListener("mouseout", e => {
+            contact_cta_span.style.left = e.pageX - contact_cta.offsetLeft + "px";
+            contact_cta_span.style.top = e.pageY - contact_cta.offsetTop + "px";
+            cursor.classList.remove("hide-cursor");
+        });
+
         lottie.loadAnimation({
             container: document.querySelector('.cat-licking'),
             renderer: 'svg',

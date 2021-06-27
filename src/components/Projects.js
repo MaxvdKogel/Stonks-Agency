@@ -10,6 +10,50 @@ function visitWebsite () {
 const Projects = function() {
 
     useEffect(() => {
+        var cursor = document.querySelector(".cursor");
+        
+        // view case
+
+        const vastgoed = document.querySelector(".desktop-vastgoed");
+        const case_study = document.querySelector(".case-study");
+
+        vastgoed.addEventListener('mouseover', () => {
+            cursor.classList.add("view-case");
+            case_study.classList.add("view-case__visible");
+        })
+
+        vastgoed.addEventListener('mouseleave', () => {
+            cursor.classList.remove("view-case");
+            case_study.classList.remove("view-case__visible");
+        })
+
+        // bezoek website
+
+        const phoneroyal = document.querySelector(".desktop-phoneroyal");
+        const bezoek_website = document.querySelector(".bezoek-website");
+
+        phoneroyal.addEventListener('mouseover', () => {
+            cursor.classList.add("bezoek-website__hover");
+            bezoek_website.classList.add("bezoek-website__visible");
+        })
+
+        phoneroyal.addEventListener('mouseleave', () => {
+            cursor.classList.remove("bezoek-website__hover");
+            bezoek_website.classList.remove("bezoek-website__visible");
+        })
+
+        const jasper = document.querySelector(".desktop-jasper");
+
+        jasper.addEventListener('mouseover', () => {
+            cursor.classList.add("bezoek-website__hover");
+            bezoek_website.classList.add("bezoek-website__visible");
+        })
+
+        jasper.addEventListener('mouseleave', () => {
+            cursor.classList.remove("bezoek-website__hover");
+            bezoek_website.classList.remove("bezoek-website__visible");
+        })
+
         lottie.loadAnimation({
             container: document.querySelector('.standing-cat'),
             renderer: 'svg',
