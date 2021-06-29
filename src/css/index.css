@@ -775,65 +775,53 @@ hr {
 
     /* projects */
 
-    .desktop-hidden {
-        display: none;
-    }
-
-    .desktop-project {
-        display: flex;
-        width: 90%;
+    .project {
+        width: 100%;
         justify-content: space-between;
-    }
-
-    .desktop-projects {
-        width: 100%;
         position: relative;
+        border-bottom: 2px solid #707070;
+        font-weight: var(--f-semi-bold);
+        padding: 30px 0;
     }
 
-    .project-line {
-        width: 100%;
-        height: 2px;
-        background-color: #707070;
-        margin: 2rem 0 5rem 0;
+    .project > * {
+        pointer-events: none;
     }
 
     .client {
-        color: #ABABAB;
-        font-weight: var(--f-semi-bold);
-        font-size: 25px;
         width: 60%;
-    }
-    
-    .client h2 {
-        color: var(--white);
-        font-size: 40px;
-        font-weight: var(--f-semi-bold);
-        margin-top: 1rem;
-    }
-
-    .desktop-projects__description {
-        width: 35%;;
-        position: relative;
-    }
-
-    .description__title {
-        color: #ABABAB;
-        font-weight: var(--f-semi-bold);
-        font-size: 22px;
     }
 
     .description {
-        font-size: 14px;
-        position: absolute;
-        bottom: 0;
-        padding: 1em 0;
-        font-weight: var(--f-semi-bold);
+        width: 35%;
+        margin-right: 5%;
     }
 
     .year {
-        float: right;
-        color:#ABABAB;
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        color: #ABABAB;
         font-size: 22px;
+        font-weight: var(--f-regular);
+    }
+
+    .description__txt {
+        font-size: 16px;
+        margin: 1em 0;
+    }
+
+    .subTitle {
+        color: #ABABAB;
+        font-size: 22px;
+    }
+
+    .clientName {
+        font-size: 40px;
+    }
+
+    .desktop-hidden {
+        display: none;
     }
 
     /* about us */
@@ -873,15 +861,8 @@ hr {
 }
 
 @media screen and (min-width: 1500px) {
-    .client h2 {
-        font-size: 45px;
-    }
-
-    .desktop-projects__description {
-        width: 30%;;
-    }
-
-    .desktop-project {
-        width: 80%;
+    .description {
+        width: 30%;
+        margin-right: 15%;
     }
 }
