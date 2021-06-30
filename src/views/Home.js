@@ -3,7 +3,7 @@ import Cursor from "../components/Cursor.js"
 import Header from "../components/Header.js";
 import Hero from "../components/Hero.js";
 import Projects from "../components/Projects.js"
-import About from "../components/About.js"
+import About from "../components/about/About.js"
 import Contact from "../components/Contact.js"
 
 const Home = function() {
