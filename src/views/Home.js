@@ -1,10 +1,11 @@
-import React from "react";
-import Cursor from "../components/Cursor.js"
-import Header from "../components/Header.js";
-import Hero from "../components/Hero.js";
-import Projects from "../components/Projects.js"
-import About from "../components/about/About.js"
-import Contact from "../components/Contact.js"
+import React from "react"
+import Cursor from "../components/Cursor"
+import Header from "../components/Header/Header"
+import Hero from "../components/Hero/Hero"
+import Projects from "../components/Projects/Projects"
+import About from "../components/about/About"
+import Contact from "../components/Contact/Contact"
+
 
 const Home = function() {
     return (

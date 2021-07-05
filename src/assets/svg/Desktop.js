@@ -1,8 +1,9 @@
 import React from 'react';
+import style from '/src/components/Projects/Projects.module.css';
 
 const Desktop = function () {
     return (
-        <svg className="desktop" xmlns="http://www.w3.org/2000/svg" width="223" height="158" viewBox="0 0 223 158">
+        <svg className={style.desktop} xmlns="http://www.w3.org/2000/svg" width="223" height="158" viewBox="0 0 223 158">
             <g id="undraw_Operating_system_re_iqsc" transform="translate(-102.983)">
                 <path id="Path_34" data-name="Path 34" d="M466.259,208.674H249.49a3.168,3.168,0,0,0-3.114,3.213V363.461a3.168,3.168,0,0,0,3.114,3.213H466.259a3.073,3.073,0,0,0,2.368-1.128.75.75,0,0,0,.068-.088,3.035,3.035,0,0,0,.446-.778,3.221,3.221,0,0,0,.236-1.22V211.887A3.168,3.168,0,0,0,466.259,208.674Zm2.228,154.787a2.31,2.31,0,0,1-1.211,2.041,2.153,2.153,0,0,1-1.018.254H249.49a2.264,2.264,0,0,1-2.225-2.3V211.887a2.264,2.264,0,0,1,2.225-2.3H466.259a2.265,2.265,0,0,1,2.229,2.3Z" transform="translate(-143.393 -208.674)" fill="#14161c"/>
                 <rect id="Rectangle_8" data-name="Rectangle 8" width="222.176" height="0.824" transform="translate(103.394 11.555)" fill="#14161c"/>

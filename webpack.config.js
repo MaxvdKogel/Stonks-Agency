@@ -41,7 +41,8 @@ module.exports = {
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'public'),
-        hot: true
+        hot: true,
+        historyApiFallback: true
     },
     target: "web"
 }

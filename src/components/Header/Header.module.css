@@ -1,0 +1,89 @@
+header {
+    padding: 20px 0;
+}
+
+.header {
+    align-items: center;
+}
+
+.logo h1{
+    font-size: 28px;
+    font-weight: var(--f-bold);
+}
+
+.line {
+    width: 100%;
+    background-color: var(--highlight);
+    height: 3px;
+}
+
+.hamburger {
+    height: 20px;
+    position: relative;
+}
+
+.hamburger__line {
+    display: block;
+    width: 45px;
+    height: 5px;
+    background-color: white;
+    border-radius: 100px;
+}
+
+.bottom-line {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--highlight);
+}
+
+@media screen and (min-width: 600px) {
+
+    header {
+        padding: 30px 0;
+    }
+    
+    .logo h1{
+        font-size: 35px;
+        font-weight: var(--f-bold);
+    }
+    
+    .line {
+        width: 100%;
+        background-color: var(--highlight);
+        height: 4px;
+    }
+    
+    .hamburger {
+        height: 25px;
+    }
+    
+    .hamburger__line {
+        width: 60px;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+    
+    .line {
+        height: 5px;
+    }
+
+    .logoDesktop {
+        visibility: hidden;
+        position: relative;
+    }
+
+    .logoDesktop::after {
+        content: 'Achoendov Media';
+        font-size: 30px;
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .logo {
+        width: 280px;
+    }
+}

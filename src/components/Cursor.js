@@ -11,8 +11,8 @@ const Cursor = function() {
 
     return (
         <div className="cursor">
-            <p className="case-study">Case <br></br> study</p>
-            <p className="bezoek-website">Bezoek <br></br> website</p>
+            <p className="caseStudy">Case <br></br> study</p>
+            <p className="bezoekWebsite">Bezoek <br></br> website</p>
         </div>
     )
 }

@@ -1,8 +1,9 @@
 import React from "react";
+import style from '/src/components/Projects/Projects.module.css';
 
 const Phone = function() {
     return (
-        <svg className="phone" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="119.975" height="173.089" viewBox="0 0 119.975 173.089">
+        <svg className={style.phone} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="119.975" height="173.089" viewBox="0 0 119.975 173.089">
             <defs>
             <filter id="Rectangle_21" x="6.705" y="39.546" width="87.441" height="34.229" filterUnits="userSpaceOnUse">
                 <feOffset dy="3" input="SourceAlpha"/>

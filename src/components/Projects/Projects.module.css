@@ -1,0 +1,267 @@
+.phoneroyal__title, .vastgoed__title {
+    font-size: 32px;
+    font-weight: var(--f-semi-bold);
+    margin-bottom: 0.5em;
+}
+
+.phoneroyal__txt, .vastgoed__txt {
+    font-size: 18px;
+    font-weight: var(--f-regular);
+}
+
+.phoneroyal__cta, .vastgoed__cta {
+    color: white;
+    text-decoration: none;
+    border: 3px solid var(--highlight);
+    padding: 0.5em 1.5em;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: var(--f-bold);
+}
+
+.phoneroyal__ctaDiv, .vastgoed__ctaDiv {
+    margin-top: 2em;
+    margin-bottom: 100px;
+    width: 110%;
+}
+
+.desktopProject {
+    cursor: pointer;
+}
+
+.phoneHidden {
+    display: none;
+}
+
+/* intro */
+
+.recentProjects {
+    display: flex;
+    margin-bottom: 150px;
+}
+
+.recentProjects__titleDiv {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    z-index: 1;
+}
+
+.recentProjects__title {
+    font-size: 28px;
+    font-weight: var(--f-semi-bold);
+}
+
+.standingCat {
+    width: 60%;
+    transform: translateX(10%);
+}
+
+/* phoneroyal */
+
+.phone {
+    width: 100%;
+}
+
+hr {
+    width: 1px;
+    height: 100px;
+    display: inline-block;
+    border-color: var(--highlight);
+    margin-bottom: 100px;
+}
+
+/* vastgoed */
+
+.vastgoed__col {
+    text-align: right;
+    transform: translateY(115px);
+}
+
+.vastgoed__ctaDiv {
+    width: 100%;
+    margin-bottom: 215px;
+}
+
+.desktop {
+    position: absolute;
+}
+
+@media screen and (min-width: 600px) {
+
+    .phoneroyal__title, .vastgoed__title {
+        font-size: 32px;
+        font-weight: var(--f-semi-bold);
+        margin-bottom: 0.5em;
+    }
+    
+    .phoneroyal__txt, .vastgoed__txt {
+        font-size: 18px;
+        font-weight: var(--f-regular);
+    }
+    
+    .phoneroyal__cta, .vastgoed__cta {
+        color: white;
+        text-decoration: none;
+        border: 3px solid var(--highlight);
+        padding: 0.5em 1.5em;
+        border-radius: 15px;
+        font-size: 18px;
+        font-weight: var(--f-bold);
+    }
+
+    /* intro */
+
+    .recentProjects__titleDiv {
+        width: 60%;
+    }
+    
+    .standingCat {
+        width: 40%;
+    }
+
+    /* phoneroyal */
+
+    .phoneroyal__col {
+        width: 75%;
+    }
+
+    .phone {
+        width: 25%;
+        height: 100%;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+
+    .phoneroyal__title, .vastgoed__title {
+        font-size: 40px;
+    }
+    
+    .phoneroyal__txt, .vastgoed__txt {
+        font-size: 20px;
+    }
+    
+    .phoneroyal__cta, .vastgoed__cta {
+        font-size: 20px;
+    }
+
+    /* intro */
+    
+    .recent-projects__title {
+        font-size: 40px;
+    }
+
+    /* phoneroyal */
+
+    .phoneroyal__col {
+        width: 70%;
+    }
+
+    .phone {
+        width: 30%;
+    }
+
+    /* vastgoed */
+
+    .vastgoed {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .vastgoed__col {
+        width: 50%;
+    }
+    
+    .desktop {
+        width: 50%;
+        height: 100%;
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .phoneHidden {
+        display: unset;
+    }
+
+    /* intro */
+
+    .recentProjects__title {
+        font-size: 60px;
+    }
+
+    .recentProjects {
+        justify-content: center;
+    }
+
+    .recentProjects__titleDiv {
+        width: 40%;
+    }
+    
+    .standingCat {
+        width: 25%;
+    }
+
+    /* projects */
+
+    .project {
+        width: 100%;
+        justify-content: space-between;
+        position: relative;
+        border-bottom: 2px solid #707070;
+        font-weight: var(--f-semi-bold);
+        padding: 30px 0;
+    }
+
+    .project > * {
+        pointer-events: none;
+    }
+
+    .client {
+        width: 60%;
+    }
+
+    .description {
+        width: 35%;
+        margin-right: 5%;
+    }
+
+    .year {
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        color: #ABABAB;
+        font-size: 22px;
+        font-weight: var(--f-regular);
+    }
+
+    .description__txt {
+        font-size: 16px;
+        margin: 1em 0;
+    }
+
+    .subTitle {
+        color: #ABABAB;
+        font-size: 22px;
+    }
+
+    .clientName {
+        font-size: 40px;
+    }
+
+    .desktopHidden {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 1500px) {
+    .description {
+        width: 30%;
+        margin-right: 15%;
+    }
+}

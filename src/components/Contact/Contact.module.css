@@ -1,0 +1,112 @@
+.contact {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.contact__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact__title {
+    font-size: 32px;
+    font-weight: var(--f-semi-bold);
+    margin-bottom: 0.5em;
+    width: 100%;
+}
+
+.contact p {
+    font-size: 20px;
+    font-weight: var(--f-regular);
+    width: 100%;
+}
+
+.contact__ctaDiv {
+    margin: 3em 0;
+    width: 100%;
+}
+
+.contact__cta {
+    font-size: 18px;
+    font-weight: var(--f-bold);
+    border: 3px solid var(--cta);
+    padding: 0.5em 1.5em;
+    border-radius: 15px;
+}
+
+@media screen and (max-height:600px) {
+    .contact__title {
+        font-size: 28px;
+    }
+
+    .contact p {
+        font-size: 16px;
+        font-weight: var(--f-regular);
+    }
+
+    .contact__cta {
+        font-size: 16px;
+    }
+
+    .contact__ctaDiv {
+        margin: 2em 0;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    
+    .contact__title {
+        font-size: 40px;
+    }
+    
+    .contact p {
+        font-size: 25px;
+    }
+    
+    .contact__cta {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    /* contact */
+
+    .contact {
+        height: 80vh;
+    }
+    
+    .contact__title {
+        font-size: 45px;
+    }
+    
+    .contact p {
+        font-size: 25px;
+    }
+    
+    .contact__cta {
+        font-size: 25px;
+    }
+
+    .catLicking {
+        width: 50%;
+    }
+    
+    .contact__col {
+        width: 50%;
+    }
+
+    .contact {
+        align-items: flex-start;
+    }
+    
+    .contact__container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    
+}
