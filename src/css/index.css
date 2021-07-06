@@ -38,6 +38,10 @@
     justify-content: center;
 }
 
+.align-center {
+    align-items: center;
+}
+
 header, section {
     background-color: var(--dark);
     color: var(--white);

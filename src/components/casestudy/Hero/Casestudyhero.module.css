@@ -1,0 +1,37 @@
+.background {
+    width: 100%;
+    height: 70vh;
+    background-color: white;
+    overflow: hidden;
+
+}
+
+.hero__container {
+    position: relative;
+}
+
+.subtxt {
+    color: #878787;
+    font-size: 18px;
+    font-weight: var(--f-semi-bold);
+}
+
+.title {
+    font-weight: var(--f-bold);
+    color: #14161C;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.txt {
+    margin-top: 10%;
+}
+
+.catDiv {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    transform: translateX(40px);
+}

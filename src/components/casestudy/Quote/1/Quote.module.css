@@ -1,0 +1,14 @@
+.background {
+    height: 60vh;
+    width: 100%;
+    background-color: #003770;
+}
+
+.p {
+    color: white;
+    text-align: center;
+}
+
+.p + .p {
+    margin-top: 1em;
+}

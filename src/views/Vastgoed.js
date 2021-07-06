@@ -1,14 +1,18 @@
-import React from 'react';
-import Cursor from '../components/Cursor.js';
-import Header from '../components/Header/Header.js'
-import Casestudyhero from '../components/casestudy/Casestudyhero.js';
+import React from 'react'
+import Cursor from '../components/Cursor'
+import CasestudyHeader from '../components/casestudy/Header/CasestudyHeader'
+import Casestudyhero from '../components/casestudy/Hero/Casestudyhero'
+import Quote from '../components/casestudy/Quote/1/Quote'
+import Quote2 from '../components/casestudy/Quote/2/Quote2'
 
 const Vastgoed = function () {
     return (
         <div>
             <Cursor />
-            <Header />
+            <CasestudyHeader />
             <Casestudyhero />
+            <Quote />
+            <Quote2 />
         </div>
     )
 }

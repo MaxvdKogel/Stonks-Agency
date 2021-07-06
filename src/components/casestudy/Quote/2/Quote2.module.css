@@ -1,0 +1,11 @@
+.bg {
+    background-color: #F5F5F5;
+}
+
+.img {
+    margin: 100px 0 50px 0;
+}
+
+.p + .p {
+    margin: 1em 0 100px 0;
+}

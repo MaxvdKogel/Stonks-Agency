@@ -9,7 +9,7 @@ const App = function() {
         <Router>
             <Switch>
                 <Route exact path="/"><Home /></Route>
-                <Route exact path="/groningenstadvastgoed"><Vastgoed /></Route>
+                <Route exact path="/gsv"><Vastgoed /></Route>
             </Switch>
         </Router>
     )
