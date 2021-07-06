@@ -16,14 +16,21 @@
     font-family: 'Poppins', sans-serif;
 }
 
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
 ::selection {
     background-color: var(--highlight);
     color: var(--white);
-  }
+}
 
 .container {
     width: 80%;
     max-width: 1400px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .d-flex {
@@ -43,7 +50,6 @@
 }
 
 header, section {
-    background-color: var(--dark);
     color: var(--white);
 
     /* horizontal center in container */
@@ -60,21 +66,54 @@ header, section {
 
 .cursor {
     position: fixed;
-    width: 15px;
-    height: 15px;
-    background-color: var(--cta);
-    border-radius: 50%;
-    left: 0;
     top: 0;
+    left: 0;
     pointer-events: none;
-    transform: translate(-50%, -50%);
     z-index: 5;
-    transition: width 0.1s, height 0.1s;
-    opacity: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cursor::before {
+    content: "";
+    z-index: 1;
+    top: -24px;
+    left: -24px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    transform-origin: center center;
+    transform: scale(.2);
+    background-color: var(--color);
+    border-radius: 50%;
+    will-change: transform;
+    transition: all .4s cubic-bezier(0.75, 0.4, 0, 0.98);
+}
+
+.project--hover::before {
+    transform: scale(2);
+}
+
+.hide::before {
+    transform: scale(0);
+}
+
+.cursor__media {
+    position: absolute;
+    z-index: 1;
+    will-change: transform;
+    transition: all .4s cubic-bezier(0.75, 0.4, 0, 0.98);
+}
+
+.cursor:not(.project--hover) > .cursor__media {
+    transform: scale(0);
+}
+
+.cursor__media > span {
+    display: block;
+    color: #fff;
+    text-align: center;
 }
 
 .cta {
@@ -120,6 +159,10 @@ header, section {
     font-weight: var(--f-semi-bold);
     font-size: 0px;
     line-height: 1.2;
+}
+
+.cursor.viewCase::before {
+    transform: scale(5.5) translate(-50%, -50%);
 }
 
 .viewCase {

@@ -9,13 +9,13 @@ import Contact from "../components/Contact/Contact"
 
 const Home = function() {
     return (
-        <div>
-            <Cursor />
-            <Header />
+        <div style={{background: "var(--dark)"}}>
+            <Header theme="dark" />
             <Hero />
             <Projects />
             <About />
             <Contact />
+            <Cursor />
         </div>
     )
 }
