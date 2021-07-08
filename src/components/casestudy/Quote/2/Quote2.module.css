@@ -1,11 +1,33 @@
 .bg {
     background-color: #F5F5F5;
+    flex-direction: column;
+}
+
+.Quote2Container {
+    position: relative;
 }
 
 .img {
     margin: 100px 0 50px 0;
+    width: 100%;
+}
+
+.p {
+    font-weight: var(--f-regular);
 }
 
 .p + .p {
-    margin: 1em 0 100px 0;
+    margin: 1.5em 0 100px 0;
+}
+
+.sheet {
+    position: absolute;
+    right: 15%;
+    bottom: 3%;
+    transform: rotate(180deg);
+}
+
+.topWave {
+    width: 100%;
+    transform: translateY(3px);
 }

@@ -1,7 +1,7 @@
 .background {
-    height: 60vh;
     width: 100%;
     background-color: #003770;
+    padding: 150px 0;
 }
 
 .p {
@@ -10,5 +10,10 @@
 }
 
 .p + .p {
-    margin-top: 1em;
+    margin-top: 1.5em;
+}
+
+.sheet {
+    position: absolute;
+    right: 15%;
 }

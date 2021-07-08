@@ -1,0 +1,25 @@
+.Quote3 {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg {
+    background-color: #003770;
+    height: 400px;
+}
+
+.p {
+    color: white;
+    text-align: center;
+}
+
+.dollarBill {
+    position: absolute;
+    right: 10%;
+}
+
+.bottomWave {
+    transform: rotate(180deg) translateY(3px);
+    width: 100%;
+}

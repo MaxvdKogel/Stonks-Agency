@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '/src/components/casestudy/Hero/Casestudyhero'
+import style from '/src/components/casestudy/Hero/Casestudyhero.module.css'
 
 const KatGebouw = function() {
     return (

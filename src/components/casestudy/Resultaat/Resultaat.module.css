@@ -1,0 +1,23 @@
+.bg {
+    padding-top: 20px;
+    flex-direction: column;
+    position: relative;
+}
+
+.resultaat {
+    color: #E2E0E0;
+    position: absolute;
+    left: 8%;
+    top: 0;
+    font-size: 30px;
+    font-weight: var(--f-semi-bold);
+}
+
+.p {
+    position: relative;
+    z-index: 1;
+}
+
+.p + .p {
+    margin: 1.5em 0 100px 0;
+}
