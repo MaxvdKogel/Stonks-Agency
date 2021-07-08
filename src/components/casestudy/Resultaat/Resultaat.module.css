@@ -19,5 +19,41 @@
 }
 
 .p + .p {
-    margin: 1.5em 0 100px 0;
+    margin: 1.5em 0 200px 0;
+}
+
+@media screen and (min-width: 600px) {
+    .bg {
+        padding-top: 35px;
+    }
+
+    .resultaat {
+        font-size: 50px;
+    }
+
+    .p {
+        font-size: 25px;
+    }
+
+    .p + .p {
+        margin: 1.5em 0 300px 0;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .bg {
+        padding-top: 50px;
+    }
+
+    .resultaat {
+        font-size: 70px;
+    }
+
+    .p {
+        font-size: 30px;
+    }
+
+    .p + .p {
+        margin: 1.5em 0 400px 0;
+    }
 }

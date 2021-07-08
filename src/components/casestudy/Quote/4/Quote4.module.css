@@ -23,9 +23,39 @@
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    width: 90%;
+    height: auto;
 }
 
 .img {
-    margin: 50px 0 100px 0;
+    margin: 100px 0;
     width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .imgDiv {
+        margin: 150px 0;
+    }
+
+    .p {
+        font-size: 25px;
+    }
+
+    .img {
+        margin: 150px 0;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .imgDiv {
+        margin: 200px 0;
+    }
+
+    .p {
+        font-size: 30px;
+    }
+
+    .img {
+        margin: 200px 0;
+    }
 }

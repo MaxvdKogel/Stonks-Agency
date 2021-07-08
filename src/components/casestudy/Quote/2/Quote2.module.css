@@ -29,5 +29,45 @@
 
 .topWave {
     width: 100%;
-    transform: translateY(3px);
+    height: auto;
+    transform: translateY(6px);
+}
+
+@media screen and (min-width: 600px) {
+    .img {
+        margin: 150px 0 100px 0;
+        width: 100%;
+    }
+
+    .p {
+        font-size: 25px;
+    }
+
+    .p + .p {
+        margin: 1.5em 0 150px 0;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .img {
+        margin: 200px 0 150px 0;
+        width: 100%;
+    }
+
+    .p {
+        font-size: 30px;
+    }
+
+    .p + .p {
+        margin: 1.5em 0 200px 0;
+    }
+
+    .sheet {
+        position: absolute;
+        right: 10%;
+        bottom: 3%;
+        transform: rotate(180deg);
+        width: 150px;
+        height: auto;
+    }
 }

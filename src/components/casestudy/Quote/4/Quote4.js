@@ -6,7 +6,7 @@ const Quote4 = function() {
         <div className={`d-flex center ${style.Quote4}`}>
             <svg className={style.lockKey} xmlns="http://www.w3.org/2000/svg" width="337.555" height="95.689" viewBox="0 0 337.555 95.689">
                     <g id="Group_30" data-name="Group 30" transform="translate(660.999 -1925.877)">
-                        <path id="Path_279" data-name="Path 279" d="M3253.478,8344.42s9.083,61.215,85.117,60.159,90.834-42.567,90.834-42.567,18.852-48.745,61.093-51.914,67.269,34.322,67.269,34.322" transform="translate(-3906.228 -6383.527)" fill="none" stroke="#b7b7b7" stroke-width="1" stroke-dasharray="12"/>
+                        <path id="Path_279" data-name="Path 279" d="M3253.478,8344.42s9.083,61.215,85.117,60.159,90.834-42.567,90.834-42.567,18.852-48.745,61.093-51.914,67.269,34.322,67.269,34.322" transform="translate(-3906.228 -6383.527)" fill="none" stroke="#b7b7b7" strokeWidth="1" strokeDasharray="12"/>
                         <g id="auth" transform="translate(-660.999 1928.678)">
                         <g id="key" transform="translate(320.542 25.526)">
                             <path id="Path_257" data-name="Path 257" d="M301,607.728a16.786,16.786,0,0,1,3.235,2.642,6.728,6.728,0,0,1,1.629,3.6,7.553,7.553,0,0,1-.548,3.9,8.1,8.1,0,0,1-2.281,3,9.343,9.343,0,0,1-3.783,1.881c-.258.063-.148.459.11.4a9.3,9.3,0,0,0,6.125-4.676,7.62,7.62,0,0,0-.573-7.911,15.263,15.263,0,0,0-3.709-3.187c-.219-.149-.425.206-.208.355Z" transform="translate(-289.316 -586.604)" fill="#003770"/>
