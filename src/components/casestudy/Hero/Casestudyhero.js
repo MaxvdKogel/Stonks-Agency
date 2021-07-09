@@ -7,7 +7,7 @@ class Casestudyhero extends React.Component {
         super()
         
         this.state = {
-            title: "Groningenstad Vastgoed"
+            title: "Groningenstad \nVastgoed"
         }
     }
 

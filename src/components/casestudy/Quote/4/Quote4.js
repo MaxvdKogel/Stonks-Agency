@@ -39,7 +39,7 @@ const Quote4 = function() {
                 </svg>
             <div className="container">
                 <div className={style.imgDiv}>
-                    <img src="/assets/img/Graphic 2.jpg" alt="video-placeholder" className={style.videoplaceholder}></img>
+                    <img className={style.img} src="assets/img/Schermopname (34).png"></img>
                 </div>
                 <div className="QuoteDiv">
                     <p className={style.p}>
@@ -51,7 +51,9 @@ const Quote4 = function() {
                     </p>
                 </div>   
 
-                <img src="/assets/img/Graphic 3 - 2FA.jpg" alt="2FA image" className={style.img}></img>
+                <div className={style.imgDiv}>
+                    <img className={style.img} src="assets/img/Schermopname (36).png"></img>
+                </div>
             </div>
         </div>
     )

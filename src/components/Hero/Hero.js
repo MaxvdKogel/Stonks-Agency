@@ -43,8 +43,8 @@ const Hero = function() {
                     </p>
                     <div className={`cta__hover ${style.cta__container}`}>
                         <a href="mailto: stront@gmail.com" className={`cta ${style.hero__cta}`}>
-                        <text>Contacteer ons</text>
-                        <span className="hero__cta-span"></span>
+                            <p className="cta__txt">Contacteer ons</p>
+                            <span className="hero__cta-span"></span>
                         </a>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 .bg {
     background-color: #F5F5F5;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .Quote2Container {
@@ -10,10 +11,12 @@
 .img {
     margin: 100px 0 50px 0;
     width: 100%;
+    height: auto;
 }
 
 .p {
     font-weight: var(--f-regular);
+    color: var(--dark);
 }
 
 .p + .p {
@@ -28,9 +31,9 @@
 }
 
 .topWave {
-    width: 100%;
+    width: 110%;
     height: auto;
-    transform: translateY(6px);
+    transform: translate(10px, 6px);;
 }
 
 @media screen and (min-width: 600px) {
@@ -69,5 +72,12 @@
         transform: rotate(180deg);
         width: 150px;
         height: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .p {
+        font-weight: var(--f-semi-bold);
+        line-height: 50px;
     }
 }

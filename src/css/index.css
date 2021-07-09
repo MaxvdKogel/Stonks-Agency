@@ -129,7 +129,7 @@ header, section {
     overflow: hidden;
 }
 
-.cta text {
+.cta__txt {
     z-index: 5;
     position: relative;
 }

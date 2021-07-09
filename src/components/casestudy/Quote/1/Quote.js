@@ -4,7 +4,7 @@ import style from './Quote.module.css'
 const Quote = function () {
     return(
         <div className={`d-flex align-center center ${style.background}`}>
-            <div className="container">
+            <div className={`container ${style.txt}`}>
                 <p className={style.p}>
                     Voor Groningen Stad Vastgoed werden overvolle excel sheets te 
                     onoverzichtelijk en niet praktisch voor een geheel kantoor.

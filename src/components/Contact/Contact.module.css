@@ -17,7 +17,15 @@
     width: 100%;
 }
 
-.contact p {
+.contact--light {
+    color: var(--dark);
+}
+
+.contact--light .contact__cta {
+    color: var(--dark);
+}
+
+.contact__txt {
     font-size: 20px;
     font-weight: var(--f-regular);
     width: 100%;
@@ -41,7 +49,7 @@
         font-size: 28px;
     }
 
-    .contact p {
+    .contact__txt {
         font-size: 16px;
         font-weight: var(--f-regular);
     }
@@ -62,7 +70,7 @@
         font-size: 40px;
     }
     
-    .contact p {
+    .contact__txt {
         font-size: 25px;
     }
     
@@ -83,7 +91,7 @@
         font-size: 45px;
     }
     
-    .contact p {
+    .contact__txt {
         font-size: 25px;
     }
     

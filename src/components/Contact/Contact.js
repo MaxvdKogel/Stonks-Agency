@@ -2,7 +2,9 @@ import React, { useEffect } from "react"
 import lottie from "lottie-web"
 import style from "./Contact.module.css"
 
-const Contact = function() {
+const Contact = function(props) {
+
+    var theme = (typeof props.theme === "undefined" || props.theme === "dark") ? style["contact--dark"] : style["contact--light"];
 
     useEffect(() => {
         const cursor = document.querySelector(".cursor");
@@ -31,16 +33,16 @@ const Contact = function() {
       }, [])
 
     return (
-        <section className={style.contact}>
+        <section className={[style.contact, theme].join(" ")}>
             <div className={`container ${style.contact__container}`}>
                 <div className={style.catLicking}></div>
                 <div className={style.contact__col}>
                     <h2 className={style.contact__title}>Klaar om in je bedrijf te <span className="pink">investeren</span>?</h2>
-                    <p>Samen maken we er iets moois van.</p>
+                    <p className={style.contact__txt}>Samen maken we er iets moois van.</p>
                     
                     <div className={`cta__hover ${style.contact__ctaDiv}`}>
                         <a className={`cta ${style.contact__cta}`} href="mailto: stront@gmail.com">
-                            <text>Contacteer ons</text>
+                            <p className="cta__txt">Contacteer ons</p>
                             <span className="contact__cta-span"></span>
                         </a>
                     </div>
