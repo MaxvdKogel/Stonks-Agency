@@ -2,9 +2,14 @@ import React, { useEffect } from "react";
 import lottie from 'lottie-web';
 import style from './Hero.module.css'
 
+import antiRag from "../../helpers/antiRagging.js";
+
 const Hero = function() {
 
     useEffect(() => {
+
+        antiRag.run(["." + style.hero__txt]);
+
         const cursor = document.querySelector(".cursor");
         const hero_cta = document.querySelector("." + style["hero__cta"]);
         const hero_cta_span = document.querySelector(".hero__cta-span");

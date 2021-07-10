@@ -1,10 +1,14 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
+
 import lottie from "lottie-web"
 import style from "./Contact.module.css"
 
+import antiRag from "../../helpers/antiRagging.js";
+
 const Contact = function(props) {
 
-    var theme = (typeof props.theme === "undefined" || props.theme === "dark") ? style["contact--dark"] : style["contact--light"];
+    var theme = (typeof props.theme === "undefined" || props.theme === "dark") ? style["contact--dark"] : style["contact--light"],
+        [resizeAmount, resizeIncrement] = useState(0);
 
     useEffect(() => {
         const cursor = document.querySelector(".cursor");
@@ -30,13 +34,17 @@ const Contact = function(props) {
             autoplay: true,
             path: '/assets/lottie-animations/kat pootje.json'
         })  
-      }, [])
+    }, []);
+
+    useEffect(() => {
+        antiRag.run(["." + style.contact__title]);
+    }, []);
 
     return (
         <section className={[style.contact, theme].join(" ")}>
             <div className={`container ${style.contact__container}`}>
                 <div className={style.catLicking}></div>
-                <div className={style.contact__col}>
+                <div className={`outer ${style.contact__col}`}>
                     <h2 className={style.contact__title}>Klaar om in je bedrijf te <span className="pink">investeren</span>?</h2>
                     <p className={style.contact__txt}>Samen maken we er iets moois van.</p>
                     
