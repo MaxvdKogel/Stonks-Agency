@@ -42,7 +42,7 @@
     }
 
     .p {
-        font-size: 25px;
+        font-size: var(--f-s);
     }
 
     .dollarBill {
@@ -63,7 +63,7 @@
     }
 
     .p {
-        font-size: 30px;
+        line-height: 1.75;
     }
 
     .dollarBill {
@@ -77,12 +77,5 @@
         left: 5%;
         width: 120px;
         height: auto;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .p {
-        font-weight: var(--f-semi-bold);
-        line-height: 50px;
     }
 }

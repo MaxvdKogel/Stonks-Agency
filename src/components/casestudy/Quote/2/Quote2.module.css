@@ -43,7 +43,7 @@
     }
 
     .p {
-        font-size: 25px;
+        font-size: var(--f-s);
     }
 
     .p + .p {
@@ -58,7 +58,7 @@
     }
 
     .p {
-        font-size: 30px;
+        line-height: 1.75;
     }
 
     .p + .p {
@@ -72,12 +72,5 @@
         transform: rotate(180deg);
         width: 150px;
         height: auto;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .p {
-        font-weight: var(--f-semi-bold);
-        line-height: 50px;
     }
 }

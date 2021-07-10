@@ -24,13 +24,14 @@
     }
 
     .p {
-        font-size: 25px;
+        font-size: var(--f-s);
     } 
 }
 
 @media screen and (min-width: 900px) {
+
     .p {
-        font-size: 30px;
+        line-height: 1.75;
     }
 
     .background {
@@ -48,11 +49,6 @@
 @media screen and (min-width: 1200px) {
     .txt {
         width: 55%;
-    }
-
-    .p {
-        font-weight: var(--f-semi-bold);
-        line-height: 50px;
     }
 
     .p + .p {

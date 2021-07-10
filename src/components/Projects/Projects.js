@@ -50,7 +50,7 @@ const Projects = function() {
                 <div className={[style.vastgoed, style.desktopHidden].join(" ")}>
                     <Desktop />
                     <div className={style.vastgoed__col}>
-                        <h2 className={style.vastgoed__title}>Groningen Stad Vatsgoed B.V.</h2>
+                        <h2 className={style.vastgoed__title}>Groningenstad Vatsgoed B.V.</h2>
                         <p className={style.vastgoed__txt}> Vastgoed software</p>
                         <div className={style.vastgoed__ctaDiv}>
                             <a href="gsv" className={style.vastgoed__cta}>Case study</a>

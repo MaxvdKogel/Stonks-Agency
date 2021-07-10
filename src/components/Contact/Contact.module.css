@@ -11,7 +11,7 @@
 }
 
 .contact__title {
-    font-size: 32px;
+    font-size: 35px;
     font-weight: var(--f-semi-bold);
     margin-bottom: 0.5em;
     width: 100%;
@@ -26,7 +26,7 @@
 }
 
 .contact__txt {
-    font-size: 20px;
+    font-size: var(--x-s);
     font-weight: var(--f-regular);
     width: 100%;
 }
@@ -37,8 +37,8 @@
 }
 
 .contact__cta {
-    font-size: 18px;
-    font-weight: var(--f-bold);
+    font-size: var(--x-s);
+    font-weight: var(--f-semi-bold);
     border: 3px solid var(--cta);
     padding: 0.5em 1.5em;
     border-radius: 15px;
@@ -46,16 +46,16 @@
 
 @media screen and (max-height:600px) {
     .contact__title {
-        font-size: 28px;
+        font-size: var(--f-s);
     }
 
     .contact__txt {
-        font-size: 16px;
+        font-size: var(--x-s);
         font-weight: var(--f-regular);
     }
 
     .contact__cta {
-        font-size: 16px;
+        font-size: var(--x-s);
     }
 
     .contact__ctaDiv {
@@ -67,15 +67,15 @@
 @media screen and (min-width: 600px) {
     
     .contact__title {
-        font-size: 40px;
+        font-size: var(--f-m);
     }
     
     .contact__txt {
-        font-size: 25px;
+        font-size: var(--f-xs);
     }
     
     .contact__cta {
-        font-size: 20px;
+        font-size: var(--f-xs)
     }
 }
 
@@ -88,15 +88,16 @@
     }
     
     .contact__title {
-        font-size: 45px;
+        font-size: var(--f-xl);
+        line-height: 1.2;
     }
     
     .contact__txt {
-        font-size: 25px;
+        font-size: 21px;
     }
     
     .contact__cta {
-        font-size: 25px;
+        font-size: 21px;
     }
 
     .catLicking {
@@ -108,7 +109,7 @@
     }
 
     .contact {
-        align-items: flex-start;
+        align-items: center;
     }
     
     .contact__container {
@@ -117,4 +118,10 @@
         justify-content: space-between;
     }
     
+}
+
+@media screen and (min-width: 1200px) {
+    .contact {
+        align-items: flex-start;
+    }
 }

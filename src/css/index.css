@@ -5,8 +5,14 @@
     --white: #FFFFFF;
 
     --f-regular: 400;
+    --f-medium: 500;
     --f-semi-bold: 600;
     --f-bold: 700;
+
+    --f-xl: 50px;
+    --f-m: 38px;
+    --f-s: 28px;
+    --f-xs: 16px;
 }
 
 * {
@@ -30,8 +36,8 @@ a {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .d-flex {

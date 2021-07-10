@@ -11,14 +11,14 @@
 
 .subtxt {
     color: #878787;
-    font-size: 18px;
-    font-weight: var(--f-semi-bold);
+    font-size: var(--f-xs);
+    font-weight: var(--f-regular);
 }
 
 .title {
     font-weight: var(--f-bold);
     color: #14161C;
-    font-size: 32px;
+    font-size: 35px;
     line-height: 1.2;
     margin-top: 0.2em;
 }
@@ -42,14 +42,11 @@
 }
 
 @media screen and (max-height: 600px) {
-    .subtxt {
-        font-size: 14px;
-    }
     
     .title {
         font-weight: var(--f-bold);
         color: #14161C;
-        font-size: 26px;
+        font-size: var(--f-s);
     }
 
     .catDiv {
@@ -62,12 +59,9 @@
 }
 
 @media (max-height: 700px) and (min-height: 600px) {
-    .subtxt {
-        font-size: 16px;
-    }
     
     .title {
-        font-size: 28px;
+        font-size: var(--f-s);
     }
     
     .catDiv {
@@ -90,7 +84,7 @@
     }
 
     .subtxt {
-        font-size: 22px;
+        font-size: var(--f-xs);
     }
 
     .title {
@@ -112,19 +106,19 @@
     }
 
     .txt {
-        margin-top: 15%;
+        margin-top: 20%;
     }
 
     .subtxt {
-        font-size: 30px;
+        font-size: var(--f-s);
     }
 
     .title {
-        font-size: 70px;
+        font-size: var(--f-xl);
     }
 
     .catDiv {
-        transform: translateX(40px);
+        transform: translateX(20px);
     }
 
     .cat {
