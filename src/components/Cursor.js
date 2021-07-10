@@ -29,7 +29,6 @@ const Cursor = function() {
                 x: e.clientX - (cursor.getBoundingClientRect().width/2),
                 y: e.clientY - (cursor.getBoundingClientRect().height/2),
                 overwrite: true,
-                duration: .3,
                 ease: "expo.out"
             });
         });
