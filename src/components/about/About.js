@@ -86,7 +86,6 @@ const About = function () {
 
     useEffect(() => {
         function swap() {
-
             swapped && document.querySelector("." + style["about--media"]).classList.add(style.swap);
             swapped || document.querySelector("." + style["about--media"]).classList.remove(style.swap);
             swapped = !swapped;
