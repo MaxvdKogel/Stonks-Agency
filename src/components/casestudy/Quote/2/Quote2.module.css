@@ -1,11 +1,83 @@
 .bg {
     background-color: #F5F5F5;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.Quote2Container {
+    position: relative;
 }
 
 .img {
     margin: 100px 0 50px 0;
+    width: 100%;
+    height: auto;
+}
+
+.p {
+    font-weight: var(--f-regular);
+    color: var(--dark);
 }
 
 .p + .p {
-    margin: 1em 0 100px 0;
+    margin: 1.5em 0 100px 0;
+}
+
+.sheet {
+    position: absolute;
+    right: 15%;
+    bottom: 3%;
+    transform: rotate(180deg);
+}
+
+.topWave {
+    width: 110%;
+    height: auto;
+    transform: translate(10px, 6px);;
+}
+
+@media screen and (min-width: 600px) {
+    .img {
+        margin: 150px 0 100px 0;
+        width: 100%;
+    }
+
+    .p {
+        font-size: 25px;
+    }
+
+    .p + .p {
+        margin: 1.5em 0 150px 0;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .img {
+        margin: 200px 0 150px 0;
+        width: 100%;
+    }
+
+    .p {
+        font-size: 30px;
+    }
+
+    .p + .p {
+        margin: 1.5em 0 200px 0;
+    }
+
+    .sheet {
+        position: absolute;
+        right: 10%;
+        bottom: 3%;
+        transform: rotate(180deg);
+        width: 150px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .p {
+        font-weight: var(--f-semi-bold);
+        line-height: 50px;
+    }
 }

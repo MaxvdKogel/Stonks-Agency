@@ -1,7 +1,7 @@
 .background {
-    height: 60vh;
     width: 100%;
     background-color: #003770;
+    padding: 200px 0;
 }
 
 .p {
@@ -10,5 +10,53 @@
 }
 
 .p + .p {
-    margin-top: 1em;
+    margin-top: 1.5em;
+}
+
+.sheet {
+    position: absolute;
+    right: 15%;
+}
+
+@media screen and (min-width: 600px) {
+    .background {
+        padding: 250px 0;
+    }
+
+    .p {
+        font-size: 25px;
+    } 
+}
+
+@media screen and (min-width: 900px) {
+    .p {
+        font-size: 30px;
+    }
+
+    .background {
+        padding: 250px 0;
+    }
+
+    .sheet {
+        position: absolute;
+        right: 15%;
+        width: 180px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .txt {
+        width: 55%;
+    }
+
+    .p {
+        font-weight: var(--f-semi-bold);
+        line-height: 50px;
+    }
+
+    .p + .p {
+        margin-top: 1em;
+    }
+
 }

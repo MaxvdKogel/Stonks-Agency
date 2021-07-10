@@ -3,7 +3,6 @@
     height: 70vh;
     background-color: white;
     overflow: hidden;
-
 }
 
 .hero__container {
@@ -20,11 +19,13 @@
     font-weight: var(--f-bold);
     color: #14161C;
     font-size: 32px;
-    line-height: 40px;
+    line-height: 1.2;
+    margin-top: 0.2em;
 }
 
 .txt {
-    margin-top: 10%;
+    margin-top: 25%;
+    white-space: pre-wrap;
 }
 
 .catDiv {
@@ -33,5 +34,107 @@
     bottom: 0;
     display: flex;
     align-items: flex-end;
-    transform: translateX(40px);
+    transform: translateX(35px);
+}
+
+.cat {
+    height: 350px;
+}
+
+@media screen and (max-height: 600px) {
+    .subtxt {
+        font-size: 14px;
+    }
+    
+    .title {
+        font-weight: var(--f-bold);
+        color: #14161C;
+        font-size: 26px;
+    }
+
+    .catDiv {
+        transform: translateX(50px);
+    }
+
+    .cat {
+        height: 250px;
+    }
+}
+
+@media (max-height: 700px) and (min-height: 600px) {
+    .subtxt {
+        font-size: 16px;
+    }
+    
+    .title {
+        font-size: 28px;
+    }
+    
+    .catDiv {
+        transform: translateX(40px);
+    }
+
+    .cat {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .hero__container {
+        display: flex;
+    }
+
+    .txt {
+        margin-top: 20%;
+    }
+
+    .subtxt {
+        font-size: 22px;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+
+    .catDiv {
+        transform: translateX(30px);
+    }
+
+    .cat {
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .background {
+        height: 75vh;
+    }
+
+    .txt {
+        margin-top: 15%;
+    }
+
+    .subtxt {
+        font-size: 30px;
+    }
+
+    .title {
+        font-size: 70px;
+    }
+
+    .catDiv {
+        transform: translateX(40px);
+    }
+
+    .cat {
+        height: 600px;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .txt {
+        margin-top: 10%;
+    }
 }

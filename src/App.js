@@ -5,6 +5,7 @@ import Home from "./views/Home.js"
 import Vastgoed from "./views/Vastgoed.js"
 
 const App = function() {
+
     return (
         <Router>
             <Switch>

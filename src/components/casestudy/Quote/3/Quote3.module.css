@@ -1,0 +1,88 @@
+.Quote3 {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg {
+    background-color: #003770;
+    height: 400px;
+    position: relative;
+}
+
+.dollarCent {
+    top: 5%;
+    left: 10%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.p {
+    color: white;
+    text-align: center;
+}
+
+.dollarBill {
+    position: absolute;
+    right: 10%;
+    width: 80px;
+    height: 80px;
+}
+
+.bottomWave {
+    transform: rotate(180deg) translate(50px, 6px);
+    width: 130%;
+    height: auto;
+}
+
+@media screen and (min-width: 600px) {
+    .bg {
+        height: 500px;
+    }
+
+    .p {
+        font-size: 25px;
+    }
+
+    .dollarBill {
+        width: 100px;
+        height: 100px;
+    }
+
+    .dollarCent {
+        top: 0;
+        width: 75px;
+        height: 75px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .bg {
+        height: 600px;
+    }
+
+    .p {
+        font-size: 30px;
+    }
+
+    .dollarBill {
+        right: 5%;
+        width: 180px;
+        height: auto;
+        bottom: 0;
+    }
+
+    .dollarCent {
+        left: 5%;
+        width: 120px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .p {
+        font-weight: var(--f-semi-bold);
+        line-height: 50px;
+    }
+}

@@ -1,0 +1,72 @@
+.Quote4 {
+    position: relative;
+}
+
+.p {
+    text-align: center;
+}
+
+.lockKey {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 90%;
+    height: auto;
+}
+
+.imgDiv {
+    margin: 100px 0;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media screen and (min-width: 600px) {
+
+    .p {
+        font-size: 25px;
+    }
+
+    .imgDiv {
+        margin: 150px 0;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    .p {
+        font-size: 30px;
+    }
+
+    .imgDiv {
+        margin: 200px 0;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+
+    .p {
+        font-size: 30px;
+    }
+
+    .imgDiv {
+        margin: 250px 0;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .imgDiv {
+        margin: 300px 0;
+    }
+
+    .p {
+        font-weight: var(--f-semi-bold);
+    }
+}
