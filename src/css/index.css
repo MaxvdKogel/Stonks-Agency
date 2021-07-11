@@ -74,6 +74,10 @@ header, section {
     color: var(--highlight);
 }
 
+.blue {
+    color: blue;
+}
+
 /* ----- cursor and hovers ----- */
 
 .cursor {

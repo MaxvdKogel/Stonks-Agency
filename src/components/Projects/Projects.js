@@ -76,7 +76,7 @@ const Projects = function() {
                         <p className={style.year}>2021</p>
                     </Link>
 
-                    <div data-text="Bezoek Site" data-color="#001F54" className={`d-flex bezoek project--desktop ${style.project}`}>
+                    <a href="https://www.phoneroyal.nl/" data-text="Bezoek Site" data-color="#001F54" className={`d-flex bezoek project--desktop ${style.project}`}>
                         <div className={style.client}>
                             <p className={style.subTitle}>Client</p>
                             <h2 className={style.clientName}>Phoneroyal</h2>
@@ -86,9 +86,9 @@ const Projects = function() {
                             <p className={style.description__txt}>Telefoon reparatie website met de mogelijkheid om reparaties te boeken</p>
                         </div>
                         <p className={style.year}>2020</p>
-                    </div>
+                    </a>
 
-                    <div data-text="Bezoek Site" data-color="#000" className={`d-flex bezoek project--desktop ${style.project}`}>
+                    <a href="https://www.jasperevenboermedia.nl/" data-text="Bezoek Site" data-color="#000" className={`d-flex bezoek project--desktop ${style.project}`}>
                         <div className={style.client}>
                             <p className={style.subTitle}>Client</p>
                             <p className={style.clientName}>Jasper Evenboer media</p>
@@ -98,7 +98,7 @@ const Projects = function() {
                             <p className={style.description__txt}>Website, portfolio voor videografie</p>
                         </div>
                         <p className={style.year}>2019</p>
-                    </div>   
+                    </a>   
 
                 </div>
             </div>

@@ -37,11 +37,11 @@ const Quote4 = function() {
                         </g>
                     </g>
                 </svg>
-            <div className="container">
+            <div className={`container ${style.Quote__container}`}>
                 <div className={style.imgDiv}>
                     <img className={style.img} src="assets/img/Schermopname (34).png"></img>
                 </div>
-                <div className="QuoteDiv">
+                <div className={style.QuoteDiv}>
                     <p className={style.p}>
                         Om de veiligheid van gevoelige data
                         te waarborgen hebben we een

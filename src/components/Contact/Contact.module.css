@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.catLicking {
+    max-width: 550px;
+}
+
 .contact__container {
     display: flex;
     flex-direction: column;
@@ -42,6 +46,27 @@
     border: 3px solid var(--cta);
     padding: 0.5em 1.5em;
     border-radius: 15px;
+}
+
+.contact--light .contact__cta {
+    border: 3px solid #003770;
+}
+
+.contact--light .ctaBg {
+    background-color: #003770;
+}
+
+.contact--light .cta__txt {
+    color: #003770;
+    transition: all .7s ease-in-out;
+}
+
+.contact__cta:hover .cta__txt {
+    color: white;
+}
+
+.contact--light .blue {
+    color: #003770;
 }
 
 @media screen and (max-height:600px) {

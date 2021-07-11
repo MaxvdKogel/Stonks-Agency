@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
+import style from "./Cursor.module.css"
 
-const Cursor = function() {
+const Cursor = function(props) {
+    var theme = (typeof props.theme === "undefined" || props.theme === "dark") ? style["cursor--dark"] : style["cursor--light"]
 
     const [text, setText] = useState("");
     const [color, setColor] = useState("#FDB5F1");
@@ -40,7 +42,7 @@ const Cursor = function() {
     }, []);
 
     return (
-        <div className="cursor" style={{"--color": color }}>
+        <div className={`cursor ${theme}`} style={{"--color": color }}>
             <div className="cursor__media">
                 {text.split(" ").map((text,i) =>
                     <span key={i}>{text}</span>

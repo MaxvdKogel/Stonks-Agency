@@ -103,10 +103,10 @@ const About = function () {
                 <div className={style["about--intro-contianer"]}>
                     <div className={style["about--media"]}>
                         <div className={[style.img, style.top].join(" ")}>
-                            <img src="/assets/img/david.jpg" />
+                            <img className={style.doavid} src="/assets/img/david.jpg" />
                         </div>
                         <div className={[style.img, style.bottom].join(" ")}>
-                            <img src="/assets/img/mank.jpg" />
+                            <img className={style.mank} src="/assets/img/mank.jpg" />
                         </div>
                     </div>
 

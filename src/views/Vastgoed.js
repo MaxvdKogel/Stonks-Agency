@@ -14,6 +14,7 @@ const Vastgoed = function () {
     useEffect(() => {
         window.scrollTo(0,0)
     }, []);
+
     return (
         <div style={{background: "#fff"}}>
             <Header theme="light" />
@@ -24,7 +25,7 @@ const Vastgoed = function () {
             <Quote4 />
             <Resultaat />
             <Contact theme="light"/>
-            <Cursor />
+            <Cursor theme="light "/>
         </div>
     )
 }

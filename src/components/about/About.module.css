@@ -73,7 +73,14 @@
 
 .about--media > .img > img {
     object-fit: cover;
-    object-position: center;
+}
+
+.mank {
+    object-position: left bottom;
+}
+
+.doavid {
+    object-position: top;
 }
 
 .about--media > .img,

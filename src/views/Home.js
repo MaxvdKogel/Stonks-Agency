@@ -14,7 +14,7 @@ const Home = function() {
             <Hero />
             <Projects />
             <About />
-            <Contact />
+            <Contact theme="dark" />
             <Cursor theme="dark" />
         </div>
     )
