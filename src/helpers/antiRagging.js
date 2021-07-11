@@ -7,6 +7,7 @@ const antiRag = {
             var el = document.querySelector(target),
                 max_line_length = el.getBoundingClientRect().width,
                 font_size = parseFloat(window.getComputedStyle(el, null).getPropertyValue('font-size')),
+                font_weight = parseFloat(window.getComputedStyle(el, null).getPropertyValue('font-weight')),
                 entities_raw = String(el.innerHTML).split(" "),
                 total_entities = entities_raw.length,
                 entities = [],
@@ -20,7 +21,7 @@ const antiRag = {
             });
     
             entities_raw = entities_raw.filter(n => n);
-    
+
             entities_raw.forEach((entity, i) => {
                 entities.push({
                     i,
@@ -31,7 +32,10 @@ const antiRag = {
                         html: function() {
                             var el = document.createElement(this.type);
                                 el.appendChild(document.createTextNode(this.text));
+                                el.innerHTML += "&nbsp;";
                                 el.style.fontSize = font_size + "px";
+                                el.style.fontWeight = font_weight;
+                                el.setAttribute("data-id", i);
                                 (this.classList != null) && el.classList.add(...this.classList.split(" "));
     
                             return el;
@@ -50,14 +54,20 @@ const antiRag = {
                     }
                 })
             });
-    
+
             var track = 0,
                 track_arr = [];
     
             entities.forEach((entity, i) => {
+
+                console.log(entities[i].element.width());
+
                 if((track + entities[i].element.width()) < max_line_length) {
                     track += entities[i].element.width();
                     track_arr.push(entities[i].element);
+
+                    if(i == (entities.length - 1)) grid.push(track_arr);
+
                     return;
                 } else {
                     track = 0;
@@ -73,20 +83,22 @@ const antiRag = {
                     return;
                 }
             });
-    
+
             if(grid.length > 1 && grid[grid.length - 1].length < 2) {
                 grid[grid.length - 1].unshift(grid[grid.length - 2].pop());
             }
     
             el.innerHTML = "";
-    
+
             grid.forEach(line => {
                 line.forEach((entity, i) => (
                     el.appendChild(entity.html()),
-                    (i < line.length - 1) && (el.innerHTML += "&nbsp;"),
+                    // (i < line.length - 1) && (el.innerHTML += "&nbsp;"),
                     (i == line.length - 1) && (el.innerHTML += "<br>")
                 ));
             });
+
+            console.log(grid);
         });
     }
 }

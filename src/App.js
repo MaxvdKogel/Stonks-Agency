@@ -1,8 +1,12 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import "./css/index.css"
-import Home from "./views/Home.js"
-import Vastgoed from "./views/Vastgoed.js"
+import React from 'react';
+import Vue from 'vue';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import "./css/index.css";
+import Home from "./views/Home.js";
+import Vastgoed from "./views/Vastgoed.js";
+import Loader from "./helpers/Loader/Loader";
+
+window.Event = new Vue({});
 
 const App = function() {
 
@@ -12,6 +16,7 @@ const App = function() {
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/gsv"><Vastgoed /></Route>
             </Switch>
+            <Loader />
         </Router>
     )
 }
