@@ -1,8 +1,9 @@
-import React from "React"
+import React, {useEffect} from "react"
 import KatGebouw from "../../../assets/svg/Kat-Gebouw";
 import style from "./Casestudyhero.module.css";
 
 class Casestudyhero extends React.Component {
+    
     constructor() {
         super()
         

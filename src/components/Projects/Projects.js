@@ -49,7 +49,7 @@ const Projects = function() {
                         <h2 className={style.vastgoed__title}>Groningenstad Vatsgoed B.V.</h2>
                         <p className={style.vastgoed__txt}> Vastgoed software</p>
                         <div className={style.vastgoed__ctaDiv}>
-                            <a href="gsv" className={style.vastgoed__cta}>Case study</a>
+                            <Link to="/gsv" className={style.vastgoed__cta}>Case study</Link>
                         </div>
                     </div>
                 </div>
