@@ -3,7 +3,7 @@ import style from './Quote.module.css'
 
 const Quote = function () {
     return(
-        <div className={`d-flex align-center center ${style.background}`}>
+        <div className={`d-flex align-center center Quote1 ${style.background}`}>
             <div className={`container ${style.txt}`}>
                 <p className={style.p}>
                     Voor Groningen Stad Vastgoed werden overvolle excel sheets te 

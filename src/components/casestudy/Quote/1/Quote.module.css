@@ -35,6 +35,8 @@
     }
 
     .background {
+        transform: translateY(200px);
+        transition: all 1s ease;
         padding: 250px 0;
     }
 

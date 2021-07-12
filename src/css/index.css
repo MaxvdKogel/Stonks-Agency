@@ -213,6 +213,10 @@ header, section {
     font-size: 18px;
 }
 
+.mounted .Quote1{
+    transform: translateY(0);
+}
+
 @media screen and (min-width: 1200px) {
     .cursor {
         opacity: 1;

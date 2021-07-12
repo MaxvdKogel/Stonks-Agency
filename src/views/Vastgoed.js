@@ -8,26 +8,45 @@ import Quote3 from '../components/casestudy/Quote/3/Quote3'
 import Quote4 from '../components/casestudy/Quote/4/Quote4'
 import Resultaat from '../components/casestudy/Resultaat/Resultaat'
 import Contact from '../components/Contact/Contact'
+import gsap from "gsap"
 
-const Vastgoed = function () {
+class Vastgoed extends React.Component {
 
-    useEffect(() => {
+    constructor() {
+        super()
+        
+        this.state = {
+            mounted: false
+        }
+
+    }
+
+    componentDidMount() {
         window.scrollTo(0,0)
-    }, []);
+        this.setState({
+            mounted: true
+        })
+    }
 
-    return (
-        <div style={{background: "#fff"}}>
-            <Header theme="light" />
-            <Casestudyhero />
-            <Quote />
-            <Quote2 />
-            <Quote3 />
-            <Quote4 />
-            <Resultaat />
-            <Contact theme="light"/>
-            <Cursor theme="light "/>
-        </div>
-    )
+    componentWillUnmount() {
+        
+    }
+
+    render() {
+        return (
+            <div className={this.state.mounted ? "mounted" : ''} style={{background: "#fff"}}>
+                <Header theme="light" />
+                <Casestudyhero />
+                <Quote />
+                <Quote2 />
+                <Quote3 />
+                <Quote4 />
+                <Resultaat />
+                <Contact theme="light"/>
+                <Cursor theme="light "/>
+            </div>
+        )
+    }
 }
 
 export default Vastgoed;
