@@ -5,10 +5,6 @@ import Desktop from "/src/assets/svg/Desktop.js"
 import lottie from 'lottie-web';
 import style from './Projects.module.css'
 
-function visitWebsite () {
-    console.log("strontanusballen");
-}
-
 const Projects = function() {
 
     useEffect(() => {
