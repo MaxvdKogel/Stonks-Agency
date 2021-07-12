@@ -11,6 +11,9 @@ const Contact = function(props) {
         [resizeAmount, resizeIncrement] = useState(0);
 
     useEffect(() => {
+
+        Event.$emit("strontje", "poep");
+
         const cursor = document.querySelector(".cursor");
         const contact_cta = document.querySelector("." + style["contact__cta"]);
         const contact_cta_span = document.querySelector('.contact__cta-span');

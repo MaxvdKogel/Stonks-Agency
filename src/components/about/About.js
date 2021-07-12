@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import useState from 'react-usestateref'
+
 
 import style from "./About.module.css";
 import { gsap } from "gsap/all";
@@ -9,91 +10,107 @@ const About = function () {
     // < Debugging >
     // const [top, setTop] = useState(0);
     // const [stick, setStick] = useState(0);
+    const isMountedRef = useRef(null);
     const [largeDevice, setDeviceState, deviceStateGetter] = useState(window.innerWidth >= 1200);
     var swapped = false;
 
-    useEffect(() => window.addEventListener("resize", () => setDeviceState((window.innerWidth >= 1200))), []);
+    useEffect(() => {
+        isMountedRef.current = true;
+
+        var listener = () => setDeviceState(window.innerWidth >= 1200);
+
+        isMountedRef.current && window.addEventListener("resize", listener);
+
+        return () => (
+            window.removeEventListener("resize", listener),
+            isMountedRef.current = false
+        );
+    }, []);
     
     useEffect(() => {
+        if(!isMountedRef.current) return;
 
         var el = document.querySelector("." + style.about);
 
-            deviceStateGetter.current && gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: document.querySelector("." + style["paragraph-container"]).clientHeight });
-            deviceStateGetter.current || (
-                gsap.killTweensOf("." + style["paragraph-container"] + " > .inner > p"),
-                gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: 0}),
-                document.querySelector(".about--content").style.cssText = ""
-            );
+        deviceStateGetter.current && gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: document.querySelector("." + style["paragraph-container"]).clientHeight });
+        deviceStateGetter.current || (
+            gsap.killTweensOf("." + style["paragraph-container"] + " > .inner > p"),
+            gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: 0}),
+            document.querySelector(".about--content").style.cssText = ""
+        );
 
-            document.addEventListener("scroll", () => {
+        var listener = () => {
 
-                if (!deviceStateGetter.current) return;
+            if (!deviceStateGetter.current) return;
 
-                var bcr = el.getBoundingClientRect(),
-                    vp = window.innerHeight,
-                    perc = Math.min(Math.max(-bcr.top / (bcr.height - vp) * 100, 0), 100),
-                    scrolledPixels = Math.min(Math.max(parseInt(perc * bcr.height / 100), 0), bcr.height),
-                    offset = (33.3333/100) * (bcr.height - vp),
-                    scrollTextTrack = bcr.height - offset,
-                    scrolledTextPercentage = Math.min(Math.max(Math.round( ( (scrolledPixels - offset) / scrollTextTrack) * 100 ), 0), 100);
+            var bcr = el.getBoundingClientRect(),
+                vp = window.innerHeight,
+                perc = Math.min(Math.max(-bcr.top / (bcr.height - vp) * 100, 0), 100),
+                scrolledPixels = Math.min(Math.max(parseInt(perc * bcr.height / 100), 0), bcr.height),
+                offset = (33.3333/100) * (bcr.height - vp),
+                scrollTextTrack = bcr.height - offset,
+                scrolledTextPercentage = Math.min(Math.max(Math.round( ( (scrolledPixels - offset) / scrollTextTrack) * 100 ), 0), 100);
 
-                // < Debugging >
-                // setTop(offset + "px");
-                // setStick(scrolledPixels + "px");
+            // < Debugging >
+            // setTop(offset + "px");
+            // setStick(scrolledPixels + "px");
 
-                /**
-                 * About section out of view
-                 */
-                (scrolledPixels <= 0) && (
-                    document.querySelector(".about--content").style.cssText = "position: relative;",
-                    [].forEach.call(document.querySelectorAll("." + style["about--title__line"]), el => el.classList.remove(style.show, style.hide)),
-                    document.querySelector("." + style["about--title"]).classList.remove(style["in-view"]),
-                    document.querySelector("." + style.animation).classList.remove(style["show--animation"]),
-                    document.querySelector("." + style["about--media"]).classList.remove(style["show--about--media"])
-                ),
-                /**
-                 * About section in view
-                 */
-                (scrolledPixels > 0) && (
-                    document.querySelector(".about--content").style.cssText = "position: fixed; top: 0; left: 0; right: 0;",
-                    [].forEach.call(document.querySelectorAll("." + style["about--title__line"]), el => (el.classList.add(style.show), el.classList.remove(style.hide))),
-                    document.querySelector("." + style["about--title"]).classList.add(style["in-view"]),
-                    document.querySelector("." + style.animation).classList.add(style["show--animation"]),
-                    document.querySelector("." + style["about--media"]).classList.add(style["show--about--media"])
-                ),
-                /**
-                 * Scrolled past offset
-                 */
-                (scrolledPixels >= offset) && (
-                    [].forEach.call(document.querySelectorAll("." + style["about--title__line"]), el => el.classList.add(style.hide)),
-                    document.querySelector("." + style.animation).classList.remove(style["show--animation"]),
-                    document.querySelector("." + style["about--media"]).classList.remove(style["show--about--media"]),
-                    gsap.to("." + style["paragraph-container"] + " > .inner > p", { 
-                        y: document.querySelector("." + style["paragraph-container"]).clientHeight - (scrolledTextPercentage/100) * document.querySelector("." + style["paragraph-container"] + " > .inner").clientHeight, 
-                        duration: .4 
-                    })
-                ),
-                /**
-                 * Scrolled past about section
-                 */
-                (scrolledPixels >= bcr.height) && (
-                    document.querySelector(".about--content").style.cssText = "position: absolute; bottom: 0; left: 0; right: 0;"
-                )
-        
-            });
+            /**
+             * About section out of view
+             */
+            (scrolledPixels <= 0) && (
+                document.querySelector(".about--content").style.cssText = "position: relative;",
+                [].forEach.call(document.querySelectorAll("." + style["about--title__line"]), el => el.classList.remove(style.show, style.hide)),
+                document.querySelector("." + style["about--title"]).classList.remove(style["in-view"]),
+                document.querySelector("." + style.animation).classList.remove(style["show--animation"]),
+                document.querySelector("." + style["about--media"]).classList.remove(style["show--about--media"])
+            ),
+            /**
+             * About section in view
+             */
+            (scrolledPixels > 0) && (
+                document.querySelector(".about--content").style.cssText = "position: fixed; top: 0; left: 0; right: 0;",
+                [].forEach.call(document.querySelectorAll("." + style["about--title__line"]), el => (el.classList.add(style.show), el.classList.remove(style.hide))),
+                document.querySelector("." + style["about--title"]).classList.add(style["in-view"]),
+                document.querySelector("." + style.animation).classList.add(style["show--animation"]),
+                document.querySelector("." + style["about--media"]).classList.add(style["show--about--media"])
+            ),
+            /**
+             * Scrolled past offset
+             */
+            (scrolledPixels >= offset) && (
+                [].forEach.call(document.querySelectorAll("." + style["about--title__line"]), el => el.classList.add(style.hide)),
+                document.querySelector("." + style.animation).classList.remove(style["show--animation"]),
+                document.querySelector("." + style["about--media"]).classList.remove(style["show--about--media"]),
+                gsap.to("." + style["paragraph-container"] + " > .inner > p", { 
+                    y: document.querySelector("." + style["paragraph-container"]).clientHeight - (scrolledTextPercentage/100) * document.querySelector("." + style["paragraph-container"] + " > .inner").clientHeight, 
+                    duration: .4 
+                })
+            ),
+            /**
+             * Scrolled past about section
+             */
+            (scrolledPixels >= bcr.height) && (
+                document.querySelector(".about--content").style.cssText = "position: absolute; bottom: 0; left: 0; right: 0;"
+            )
+    
+        };
 
+        document.addEventListener("scroll", listener);
+
+        return () => document.removeEventListener("scroll", listener);
     }, [largeDevice]);
 
     useEffect(() => {
-        function swap() {
+        if(!isMountedRef.current) return;
+
+        var swap = setInterval(function() {
             swapped && document.querySelector("." + style["about--media"]).classList.add(style.swap);
             swapped || document.querySelector("." + style["about--media"]).classList.remove(style.swap);
             swapped = !swapped;
-
-            setTimeout(() => swap(), 1000);
-        }  
+        }, 1000);
         
-        swap();
+        return () => clearInterval(swap);
     }, []);
 
     return (
