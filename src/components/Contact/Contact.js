@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 
 import lottie from "lottie-web"
 import style from "./Contact.module.css"
@@ -7,25 +7,32 @@ import style from "./Contact.module.css"
 
 const Contact = function(props) {
 
+    const isMountedRef = useRef(null);
     var theme = (typeof props.theme === "undefined" || props.theme === "dark") ? style["contact--dark"] : style["contact--light"],
         [resizeAmount, resizeIncrement] = useState(0);
 
     useEffect(() => {
+        isMountedRef.current = true;
+
         const cursor = document.querySelector(".cursor");
         const contact_cta = document.querySelector("." + style["contact__cta"]);
         const contact_cta_span = document.querySelector('.contact__cta-span');
 
-        contact_cta.addEventListener("mouseover", e => {
-            contact_cta_span.style.left = e.pageX - contact_cta.offsetLeft + "px";
-            contact_cta_span.style.top = e.pageY - contact_cta.offsetTop + "px";
-            cursor.classList.add("hide-cursor");
-        });
+        var listeners = {
+            mouseover:  e => {
+                contact_cta_span.style.left = e.pageX - contact_cta.offsetLeft + "px";
+                contact_cta_span.style.top = e.pageY - contact_cta.offsetTop + "px";
+                cursor.classList.add("hide-cursor");
+            },
+            mouseout: e => {
+                contact_cta_span.style.left = e.pageX - contact_cta.offsetLeft + "px";
+                contact_cta_span.style.top = e.pageY - contact_cta.offsetTop + "px";
+                cursor.classList.remove("hide-cursor");
+            }
+        };
 
-        contact_cta.addEventListener("mouseout", e => {
-            contact_cta_span.style.left = e.pageX - contact_cta.offsetLeft + "px";
-            contact_cta_span.style.top = e.pageY - contact_cta.offsetTop + "px";
-            cursor.classList.remove("hide-cursor");
-        });
+        isMountedRef.current && contact_cta.addEventListener("mouseover", listeners.mouseover);
+        isMountedRef.current && contact_cta.addEventListener("mouseout", listeners.mouseout);
 
         lottie.loadAnimation({
             container: document.querySelector("." + style["catLicking"]),
@@ -34,6 +41,13 @@ const Contact = function(props) {
             autoplay: true,
             path: '/assets/lottie-animations/kat pootje.json'
         })  
+
+        return () => {
+            isMountedRef.current = false;
+
+            contact_cta.removeEventListener("mouseover", listeners.mouseover);
+            contact_cta.removeEventListener("mouseout", listeners.mouseout);
+        };
     }, []);
 
     // useEffect(() => {

@@ -4,7 +4,7 @@ import style from "./Loader.module.css";
 
 const Loader = function() {
 
-    const [isLoading, setLoadingState] = useState(false);
+    const [isLoading, setLoadingState] = useState(true);
 
     useEffect(() => {
 

@@ -9,7 +9,6 @@ import Loader from "./helpers/Loader/Loader";
 window.Event = new Vue({});
 
 const App = function() {
-
     return (
         <Router>
             <Switch>

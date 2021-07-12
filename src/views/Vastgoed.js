@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Cursor from '../components/Cursor'
 import Header from '../components/Header/Header'
 import Casestudyhero from '../components/casestudy/Hero/Casestudyhero'
@@ -11,7 +11,7 @@ import Contact from '../components/Contact/Contact'
 import gsap from "gsap"
 
 class Vastgoed extends React.Component {
-
+  
     constructor() {
         super()
         
