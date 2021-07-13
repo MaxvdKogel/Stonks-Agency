@@ -35,7 +35,7 @@ const Projects = function() {
                         <h2 className={style.phoneroyal__title}>Phoneroyal</h2>
                         <p className={style.phoneroyal__txt}>Telefoon reparatie bedrijf in Groningen.</p>
                         <div className={style.phoneroyal__ctaDiv}>
-                            <a href="https://www.phoneroyal.nl/" className={style.phoneroyal__cta}>Bezoek website</a>
+                            <a target="_blank" href="https://www.phoneroyal.nl/" className={style.phoneroyal__cta}>Bezoek website</a>
                         </div>                 
                     </div>
                     <Phone />
@@ -49,7 +49,7 @@ const Projects = function() {
                         <h2 className={style.vastgoed__title}>Groningenstad Vatsgoed B.V.</h2>
                         <p className={style.vastgoed__txt}> Vastgoed software</p>
                         <div className={style.vastgoed__ctaDiv}>
-                            <Link to="/gsv" className={style.vastgoed__cta}>Case study</Link>
+                            <Link to="/casestudy/groningen-stad-vastgoed" className={style.vastgoed__cta}>Case study</Link>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ const Projects = function() {
 
                 <div className={style.phoneHidden}>
 
-                    <Link to="/gsv" data-text="Case Study" data-color="#003770" className={`d-flex desktopVastgoed project--desktop ${style.project}`}>
+                    <Link to="/casestudy/groningen-stad-vastgoed" data-text="Case Study" data-color="#003770" className={`d-flex desktopVastgoed project--desktop ${style.project}`}>
                         <div className={style.client}>
                             <p className={style.subTitle}>Client</p>
                             <h2 className={style.clientName}>Groningenstad Vastgoed</h2>

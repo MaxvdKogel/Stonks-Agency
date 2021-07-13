@@ -63,11 +63,6 @@ a {
 
 header, section {
     color: var(--white);
-
-    /* horizontal center in container */
-
-    display: flex;
-    justify-content: center;
 }
 
 .pink {

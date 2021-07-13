@@ -1,13 +1,12 @@
+.section {
+    background-color: #003770;
+    padding: 20vh  0;
+}
+
 .Quote3 {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-}
-
-.bg {
-    background-color: #003770;
-    height: 400px;
-    position: relative;
 }
 
 .dollarCent {
@@ -19,8 +18,10 @@
 }
 
 .p {
-    color: white;
     text-align: center;
+    margin: 0 auto;
+    font-weight: var(--f-medium);
+    color: var(--white);
 }
 
 .dollarBill {
@@ -42,7 +43,7 @@
     }
 
     .p {
-        font-size: var(--f-s);
+        font-size: 20px;
     }
 
     .dollarBill {
@@ -63,7 +64,7 @@
     }
 
     .p {
-        line-height: 1.75;
+        max-width: 675px;
     }
 
     .dollarBill {

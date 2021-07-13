@@ -13,7 +13,7 @@ const App = function() {
         <Router>
             <Switch>
                 <Route exact path="/"><Home /></Route>
-                <Route exact path="/gsv"><Vastgoed /></Route>
+                <Route exact path="/casestudy/groningen-stad-vastgoed"><Vastgoed /></Route>
             </Switch>
             <Loader />
         </Router>

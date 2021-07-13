@@ -1,12 +1,12 @@
-.background {
-    width: 100%;
+.section {
     background-color: #003770;
-    padding: 200px 0;
+    padding: 20vh 0;
 }
 
 .p {
-    color: white;
     text-align: center;
+    font-weight: var(--f-medium);
+    color: var(--white);
 }
 
 .p + .p {
@@ -19,10 +19,6 @@
 }
 
 @media screen and (min-width: 600px) {
-    .background {
-        padding: 250px 0;
-    }
-
     .p {
         font-size: var(--f-s);
     } 
@@ -31,13 +27,12 @@
 @media screen and (min-width: 900px) {
 
     .p {
-        line-height: 1.75;
+        font-size: 20px;
     }
 
-    .background {
+    .section {
         transform: translateY(200px);
         transition: all 1s ease;
-        padding: 250px 0;
     }
 
     .sheet {

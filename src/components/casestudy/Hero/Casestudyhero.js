@@ -14,7 +14,7 @@ class Casestudyhero extends React.Component {
 
     render() {
         return (
-            <section className={style.background}>
+            <section className={style.section}>
                 <div className={`container ${style.hero__container}`}>
                     <div className={style.txt}>
                         <p className={style.subtxt}>Client</p>

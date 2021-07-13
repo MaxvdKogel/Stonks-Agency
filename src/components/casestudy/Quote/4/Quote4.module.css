@@ -1,13 +1,47 @@
-.Quote4 {
+.section {
     position: relative;
 }
 
+.img-cover,
+.vid-cover {
+    position: relative;
+    border-radius: 0;
+    margin: 0 -40px 0 -40px;
+    overflow: hidden;
+    border-bottom: 2px solid #003770;
+}
+
+.vid-cover {
+    padding-bottom: 36vh;
+}
+
+.img-cover > img,
+.vid-cover > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    float: left;
+}
+
+.vid-cover > video {
+    position: absolute;
+}
+
 .Quote__container {
- z-index: 1;
+    z-index: 1;
+}
+
+.QuoteDiv {
+    padding: 20vh 0;
 }
 
 .p {
+    margin: 0 auto;
     text-align: center;
+    max-width: 900px;
+    font-weight: var(--f-medium);
+    color: var(--dark);
 }
 
 .lockKey {
@@ -24,16 +58,14 @@
     margin: 100px 0;
 }
 
-.img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
 @media screen and (min-width: 600px) {
 
+    .vid-cover {
+        padding-bottom: 50vh;
+    }
+
     .p {
-        font-size: var(--f-s);
+        font-size: 20px;
     }
 
     .imgDiv {
@@ -42,6 +74,23 @@
 }
 
 @media screen and (min-width: 900px) {
+
+    .section {
+        padding: 15vh 0 0 0;
+    }
+
+    .img-cover {
+        border-radius: 20px;
+        border: 5px solid #003770;
+        margin: 0 0 15vh 0;
+    }
+
+    .vid-cover {
+        border-radius: 20px;
+        border: 5px solid #003770;
+        margin: 0;
+        padding-bottom: 60vh;
+    }
 
     .p {
         line-height: 1.75;

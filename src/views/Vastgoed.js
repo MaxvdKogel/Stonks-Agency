@@ -34,7 +34,7 @@ class Vastgoed extends React.Component {
 
     render() {
         return (
-            <div className={this.state.mounted ? "mounted" : ''} style={{background: "#fff"}}>
+            <div className={this.state.mounted ? "mounted" : ''} style={{background: "#fff", position: "relative"}}>
                 <Header theme="light" />
                 <Casestudyhero />
                 <Quote />
