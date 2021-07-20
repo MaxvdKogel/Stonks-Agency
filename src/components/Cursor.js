@@ -32,11 +32,11 @@ const Cursor = function(props) {
                     );
                 } 
                 
-                if (e.target.hasAttribute("data-controls")) {
-                    gsap.to(".cursor__media", {scale: 1, duration: 0, overwrite: true, onComplete: () => setIsVideo(true)})
-                } else {
-                    gsap.to(".cursor__media", {scale: 0, duration: .4, ease: "expo.out", overwrite: false, onComplete: () => setIsVideo(false)})
-                } 
+                // if (e.target.hasAttribute("data-controls")) {
+                //     gsap.to(".cursor__media", {scale: 1, duration: 0, overwrite: true, onComplete: () => setIsVideo(true)})
+                // } else {
+                //     gsap.to(".cursor__media", {scale: 0, duration: .4, ease: "expo.out", overwrite: false, onComplete: () => setIsVideo(false)})
+                // } 
     
                 gsap.to(cursor, {
                     x: e.clientX - (cursor.getBoundingClientRect().width/2),
@@ -45,6 +45,16 @@ const Cursor = function(props) {
                     ease: "expo.out"
                 });
             },
+            mouseover: function(e) {
+                if (e.target.hasAttribute("data-controls")) {
+                    gsap.to(".cursor__media", {scale: 1, duration: .4, overwrite: true, onComplete: () => setIsVideo(true)})
+                }
+            },
+            mouseout: function(e) {
+                if (e.target.hasAttribute("data-controls")) {
+                    gsap.to(".cursor__media", {scale: 0, duration: .4, onComplete: () => setIsVideo(false)})
+                } 
+            },
             mouseleave: function(e){
                 !cursor.classList.contains("hide") && cursor.classList.add("hide");
             }
@@ -52,12 +62,16 @@ const Cursor = function(props) {
 
         isMountedRef.current && document.addEventListener('mousemove', listeners.mousemove);
         isMountedRef.current && document.addEventListener('mouseleave', listeners.mouseleave);
+        isMountedRef.current && document.addEventListener('mouseover', listeners.mouseover);
+        isMountedRef.current && document.addEventListener('mouseout', listeners.mouseout);
 
         return () => {
             isMountedRef.current = false;
 
             document.removeEventListener('mousemove', listeners.mousemove);
             document.removeEventListener('mouseleave', listeners.mouseleave);
+            document.removeEventListener('mouseover', listeners.mouseover);
+            document.removeEventListener('mouseout', listeners.mouseout);
         };
     }, []);
 
@@ -69,7 +83,7 @@ const Cursor = function(props) {
                 )}
             </div>
             <div className="cursor__media">{
-                isVideo && <div className={style.cursorPlay}>
+                <div className={style.cursorPlay}>
                     <Play />
                 </div>
             }</div>

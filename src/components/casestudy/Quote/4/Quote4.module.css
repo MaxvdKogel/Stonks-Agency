@@ -8,7 +8,7 @@
     border-radius: 0;
     margin: 0 -40px;
     overflow: hidden;
-    border-bottom: 2px solid #003770;
+    box-shadow: 0px 15px 15px #d1d1d1;
 }
 
 .vid-cover {
@@ -81,13 +81,11 @@
 
     .img-cover {
         border-radius: 20px;
-        border: 5px solid #003770;
         margin: 0;
     }
 
     .vid-cover {
         border-radius: 20px;
-        border: 5px solid #003770;
         margin: 0;
         padding-bottom: 60vh;
     }
@@ -106,4 +104,5 @@
     .imgDiv {
         margin: 300px 0;
     }
+    
 }

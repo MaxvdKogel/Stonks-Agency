@@ -123,7 +123,7 @@ const About = function () {
                             <img className={style.doavid} src="/assets/img/david.jpg" />
                         </div>
                         <div className={[style.img, style.bottom].join(" ")}>
-                            <img className={style.mank} src="/assets/img/mank.jpg" />
+                            <img className={style.mank} src="/assets/img/mank.jpeg" />
                         </div>
                     </div>
 
