@@ -7,15 +7,9 @@ const Quote2 = function() {
 
             <div className={`container ${style.Quote2Container}`}>
 
-                <div className={style["img-cover"]}>
+                <div className={`fade-in ${style["img-cover"]}`}>
                     <img src="/assets/img/gsv-cover-logo.jpg" />
                 </div>
-
-                <p className={style.p}>
-                    Groningenstad Vastgoed werkte in excel bestanden. Dit werkt misschien voldoende voor kleinschalige projecten maar de bestanden werd dusdanig groot dat het onoverzichtelijk en traag werd.
-                    Daarnaast was de data niet toegankelijk voor iedereen en dus onpraktisch. Efficiëntie en veiligheid
-                    waren niet van de orde. 
-                </p>
 
             </div>
 

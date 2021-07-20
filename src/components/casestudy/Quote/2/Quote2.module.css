@@ -9,7 +9,7 @@
     border-radius: 0;
     border-bottom: 2px solid #003770;
     padding-bottom: 36vh;
-    margin: 0 -40px 15vh -40px;
+    margin: 0 -40px 0 -40px;
     overflow: hidden;
 }
 
@@ -45,7 +45,7 @@
 .figure {
     position: absolute;
     bottom: 0;
-    right: 100px;
+    left: 100px;
 }
 
 .figure > svg {
@@ -73,7 +73,7 @@
     .img-cover {
         border-radius: 20px;
         border: 5px solid #003770;
-        margin: 0 0 15vh 0;
+        margin: 0;
         padding-bottom: 60vh;
     }
 

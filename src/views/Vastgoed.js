@@ -21,15 +21,27 @@ class Vastgoed extends React.Component {
 
     }
 
+    scroll(e) {
+        var Event = e;
+
+        [].forEach.call(document.querySelectorAll(".fade-in"), (target) => {
+            var bcr = target.getBoundingClientRect();
+
+            if ((-bcr.top + window.innerHeight + (0.10*bcr.height)) > 0) !target.classList.contains("in-view") && target.classList.add("in-view");
+        })
+    }
+
     componentDidMount() {
         window.scrollTo(0,0)
         this.setState({
             mounted: true
         })
+
+        document.addEventListener("scroll", (e) => this.scroll(e));
     }
 
     componentWillUnmount() {
-        
+        document.removeEventListener("scroll", () => this.scroll());
     }
 
     render() {
@@ -37,13 +49,11 @@ class Vastgoed extends React.Component {
             <div className={this.state.mounted ? "mounted" : ''} style={{background: "#fff", position: "relative"}}>
                 <Header theme="light" />
                 <Casestudyhero />
-                <Quote />
                 <Quote2 />
                 <Quote3 />
                 <Quote4 />
-                <Resultaat />
                 <Contact theme="light"/>
-                <Cursor theme="light "/>
+                <Cursor theme="gsv"/>
             </div>
         )
     }

@@ -1,13 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
-import style from "./Cursor.module.css"
+import style from "./Cursor.module.css";
+import Play from "../assets/svg/Play";
 
 const Cursor = function(props) {
-    var theme = (typeof props.theme === "undefined" || props.theme === "dark") ? style["cursor--dark"] : style["cursor--light"]
+    var theme = (typeof props.theme === "undefined") ? "" : style[props.theme];
 
     const isMountedRef = useRef(null);
     const [text, setText] = useState("");
     const [color, setColor] = useState("#FDB5F1");
+    const [isVideo, setIsVideo] = useState(false);
 
     useEffect(() => {
         isMountedRef.current = true;
@@ -28,6 +30,12 @@ const Cursor = function(props) {
                         setText(""),
                         setColor("#FDB5F1")
                     );
+                } 
+                
+                if (e.target.hasAttribute("data-controls")) {
+                    gsap.to(".cursor__media", {scale: 1, duration: 0, overwrite: true, onComplete: () => setIsVideo(true)})
+                } else {
+                    gsap.to(".cursor__media", {scale: 0, duration: .4, ease: "expo.out", overwrite: false, onComplete: () => setIsVideo(false)})
                 } 
     
                 gsap.to(cursor, {
@@ -54,12 +62,17 @@ const Cursor = function(props) {
     }, []);
 
     return (
-        <div className={`cursor ${theme}`} style={{"--color": color }}>
-            <div className="cursor__media">
+        <div className={["cursor", theme, isVideo ? "video-controls" : ""].join(" ")} style={{"--color": color }}>
+            <div className="cursor__text">
                 {text.split(" ").map((text,i) =>
                     <span key={i}>{text}</span>
                 )}
             </div>
+            <div className="cursor__media">{
+                isVideo && <div className={style.cursorPlay}>
+                    <Play />
+                </div>
+            }</div>
         </div>
     )
 }

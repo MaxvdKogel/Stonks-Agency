@@ -111,6 +111,7 @@ header, section {
     transform: scale(0);
 }
 
+.cursor__text,
 .cursor__media {
     position: absolute;
     z-index: 1;
@@ -118,11 +119,16 @@ header, section {
     transition: all .4s cubic-bezier(0.75, 0.4, 0, 0.98);
 }
 
-.cursor:not(.project--hover) > .cursor__media {
+/* .cursor__media {
+    transform: scale(0);
+} */
+
+.cursor:not(.project--hover) > .cursor__text,
+.cursor:not(.video-controls) > .cursor__media {
     transform: scale(0);
 }
 
-.cursor__media > span {
+.cursor__text > span {
     display: block;
     color: #fff;
     text-align: center;
@@ -210,6 +216,33 @@ header, section {
 
 .mounted .Quote1{
     transform: translateY(0);
+}
+
+/**
+ * 
+ */
+
+.fade-in,
+.paragraph-wrapper.fade-in > p {
+    transition: all 1s cubic-bezier(0.55, 0.28, 0, 1.01);
+}
+
+.fade-in:not(.in-view) {
+    transform: translateY(30%) scale(1.08);
+    opacity: 0;
+}
+
+.paragraph-wrapper {
+    overflow: hidden;
+}
+
+.paragraph-wrapper:not(.in-view) {
+    opacity: 1;
+}
+
+.paragraph-wrapper:not(.in-view) > p {
+    transform: translateY(100%);
+    opacity: 1;
 }
 
 @media screen and (min-width: 1200px) {
