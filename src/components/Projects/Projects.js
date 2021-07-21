@@ -21,7 +21,7 @@ const Projects = function() {
         <section className={style.projects}>
             <div className="container">
 
-                <div className={style.recentProjects}>
+                <div className={`fade-in ${style.recentProjects}`}>
                     <div className={style.recentProjects__titleDiv}>
                         <h2 className={style.recentProjects__title}>Recente <span className="pink">projecten</span></h2>                
                     </div>  
@@ -30,7 +30,7 @@ const Projects = function() {
 
                 {/* mobile projects */}
 
-                <div className={`d-flex ${[style.phoneroyal, style.desktopHidden].join(" ")}`}>
+                <div className={`d-flex fade-in ${[style.phoneroyal, style.desktopHidden].join(" ")}`}>
                     <div className={style.phoneroyal__col}>
                         <h2 className={style.phoneroyal__title}>Phoneroyal</h2>
                         <p className={style.phoneroyal__txt}>Telefoon reparatie bedrijf in Groningen.</p>
@@ -41,9 +41,9 @@ const Projects = function() {
                     <Phone />
                 </div>
 
-                <div className={`d-flex center ${style.desktopHidden}`}><hr></hr></div>
+                <div className={`d-flex center fade-in ${style.desktopHidden}`}><hr></hr></div>
                 
-                <div className={[style.vastgoed, style.desktopHidden].join(" ")}>
+                <div className={`fade-in ${[style.vastgoed, style.desktopHidden].join(" ")}`}>
                     <Desktop />
                     <div className={style.vastgoed__col}>
                         <h2 className={style.vastgoed__title}>Groningenstad Vatsgoed B.V.</h2>
@@ -60,7 +60,7 @@ const Projects = function() {
 
                 <div className={style.phoneHidden}>
 
-                    <Link to="/casestudy/groningen-stad-vastgoed" data-text="Case Study" data-color="#003770" className={`d-flex desktopVastgoed project--desktop ${style.project}`}>
+                    <Link to="/casestudy/groningen-stad-vastgoed" data-text="Case Study" data-color="#003770" className={`d-flex desktopVastgoed project--desktop fade-in ${style.project}`}>
                         <div className={style.client}>
                             <p className={style.subTitle}>Client</p>
                             <h2 className={style.clientName}>Groningenstad Vastgoed</h2>
@@ -72,7 +72,7 @@ const Projects = function() {
                         <p className={style.year}>2021</p>
                     </Link>
 
-                    <a href="https://www.phoneroyal.nl/" data-text="Bezoek Site" data-color="#001F54" className={`d-flex bezoek project--desktop ${style.project}`}>
+                    <a href="https://www.phoneroyal.nl/" data-text="Bezoek Site" data-color="#001F54" className={`d-flex bezoek project--desktop fade-in ${style.project}`}>
                         <div className={style.client}>
                             <p className={style.subTitle}>Client</p>
                             <h2 className={style.clientName}>Phoneroyal</h2>
@@ -84,7 +84,7 @@ const Projects = function() {
                         <p className={style.year}>2020</p>
                     </a>
 
-                    <a href="https://www.jasperevenboermedia.nl/" data-text="Bezoek Site" data-color="#000" className={`d-flex bezoek project--desktop ${style.project}`}>
+                    <a href="https://www.jasperevenboermedia.nl/" data-text="Bezoek Site" data-color="#000" className={`d-flex bezoek project--desktop fade-in ${style.project}`}>
                         <div className={style.client}>
                             <p className={style.subTitle}>Client</p>
                             <p className={style.clientName}>Jasper Evenboer media</p>

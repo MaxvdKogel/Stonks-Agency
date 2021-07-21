@@ -56,7 +56,7 @@ const Contact = function(props) {
 
     return (
         <section className={[style.contact, theme].join(" ")}>
-            <div className={`container ${style.contact__container}`}>
+            <div className={`container fade-in ${style.contact__container}`}>
                 <div className={style.catLicking}></div>
                 <div className={`outer ${style.contact__col}`}>
                     <h2 className={style.contact__title}>Klaar om in je bedrijf te <span className={`pink ${style.blue}`}>investeren</span>?</h2>

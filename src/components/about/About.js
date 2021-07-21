@@ -134,7 +134,7 @@ const About = function () {
                         </svg>
                     </div>
 
-                    <div className={style["about--intro"]}>
+                    <div className={`fade-in ${style["about--intro"]}`}>
                         <h2 className={style["about--title"]}>
                             <span className={style["text--wrapper"]}>
                                 <span className={[style["about--title__line"]].join(" ")}>Wij zijn</span>
