@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
+import useStateRef from 'react-usestateref';
 import gsap from "gsap";
 import style from "./Cursor.module.css";
 import Play from "../assets/svg/Play";
+import Pause from "../assets/svg/Pause";
 
 const Cursor = function(props) {
     var theme = (typeof props.theme === "undefined") ? "" : style[props.theme];
@@ -10,6 +12,7 @@ const Cursor = function(props) {
     const [text, setText] = useState("");
     const [color, setColor] = useState("#FDB5F1");
     const [isVideo, setIsVideo] = useState(false);
+    const [isPlaying, setIsPlaying, isPlayingGetter] = useStateRef(false);
 
     useEffect(() => {
         isMountedRef.current = true;
@@ -32,18 +35,23 @@ const Cursor = function(props) {
                     );
                 } 
                 
-                // if (e.target.hasAttribute("data-controls")) {
-                //     gsap.to(".cursor__media", {scale: 1, duration: 0, overwrite: true, onComplete: () => setIsVideo(true)})
-                // } else {
-                //     gsap.to(".cursor__media", {scale: 0, duration: .4, ease: "expo.out", overwrite: false, onComplete: () => setIsVideo(false)})
-                // } 
-    
+                if (e.target.hasAttribute("data-controls")) {
+                    if(e.target.paused) setIsPlaying(false);
+                    else setIsPlaying(true);
+                }
+
                 gsap.to(cursor, {
                     x: e.clientX - (cursor.getBoundingClientRect().width/2),
                     y: e.clientY - (cursor.getBoundingClientRect().height/2),
                     overwrite: true,
                     ease: "expo.out"
                 });
+            },
+            click: function(e) {
+                if (e.target.hasAttribute("data-controls")) {
+                    if(isPlayingGetter.current) setIsPlaying(false);
+                    else setIsPlaying(true);
+                }
             },
             mouseover: function(e) {
                 if (e.target.hasAttribute("data-controls")) {
@@ -60,10 +68,13 @@ const Cursor = function(props) {
             }
         }
 
-        isMountedRef.current && document.addEventListener('mousemove', listeners.mousemove);
-        isMountedRef.current && document.addEventListener('mouseleave', listeners.mouseleave);
-        isMountedRef.current && document.addEventListener('mouseover', listeners.mouseover);
-        isMountedRef.current && document.addEventListener('mouseout', listeners.mouseout);
+        if (isMountedRef.current) {
+            document.addEventListener('mousemove', listeners.mousemove);
+            document.addEventListener('mouseleave', listeners.mouseleave);
+            document.addEventListener('mouseover', listeners.mouseover);
+            document.addEventListener('mouseout', listeners.mouseout);
+            document.addEventListener('click', listeners.click);
+        }
 
         return () => {
             isMountedRef.current = false;
@@ -72,21 +83,25 @@ const Cursor = function(props) {
             document.removeEventListener('mouseleave', listeners.mouseleave);
             document.removeEventListener('mouseover', listeners.mouseover);
             document.removeEventListener('mouseout', listeners.mouseout);
+            document.removeEventListener('click', listeners.click);
         };
     }, []);
 
     return (
-        <div className={["cursor", theme, isVideo ? "video-controls" : ""].join(" ")} style={{"--color": color }}>
+        <div className={["cursor", theme, isVideo ? "video-controls" : "", isPlaying ? "video-is-playing" : ""].join(" ")} style={{"--color": color }}>
             <div className="cursor__text">
                 {text.split(" ").map((text,i) =>
                     <span key={i}>{text}</span>
                 )}
             </div>
-            <div className="cursor__media">{
+            <div className="cursor__media">
                 <div className={style.cursorPlay}>
                     <Play />
                 </div>
-            }</div>
+                <div className={style.cursorPause}>
+                    <Pause />
+                </div> 
+            </div>
         </div>
     )
 }
