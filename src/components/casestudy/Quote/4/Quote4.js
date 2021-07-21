@@ -20,7 +20,7 @@ const Quote4 = function() {
             );
         },
         webkitendfullscreen: (e) => {
-            e.target.paused && e.target.parentNode.classList.remove("is-playing");
+            e.target.parentNode.classList.remove("is-playing");
         }
     };
 
@@ -40,9 +40,21 @@ const Quote4 = function() {
 
             <div className={`container`}>
 
-                <div className={`fade-in ${style["img-cover"]}`}>
-                    <img src="/assets/img/gsv-cover-software.jpg" />
+                <div className={`fade-in ${style["img-cover"]} ${style["vid-cover"]}`}>
+                    <video style={{transform:"scaleX(1.001)"}} muted loop data-controls>
+                        <source src="/assets/vid/gsv-cover-demo.mp4" type="video/mp4" />
+                    </video>
+
+                    <div className="controls">
+                        <div className={style.cursorPlay}>
+                            <Play />
+                        </div>
+                    </div>
                 </div>
+
+                {/* <div className={`fade-in ${style["img-cover"]}`}>
+                    <img src="/assets/img/gsv-cover-software.jpg" />
+                </div> */}
 
                 <div className={style.QuoteDiv}>
 
