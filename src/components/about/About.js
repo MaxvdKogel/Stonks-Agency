@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import useState from 'react-usestateref'
+import useState from 'react-usestateref';
 
 
 import style from "./About.module.css";

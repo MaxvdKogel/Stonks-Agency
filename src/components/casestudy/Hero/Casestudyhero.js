@@ -43,10 +43,9 @@ class Casestudyhero extends React.Component {
                         </div>
 
                     </div>
-
-                    <div className={style.catDiv}>
-                        <KatGebouw />                
-                    </div>
+                </div>
+                <div className={style.catDiv}>
+                    <KatGebouw />                
                 </div>
             </section>
         )

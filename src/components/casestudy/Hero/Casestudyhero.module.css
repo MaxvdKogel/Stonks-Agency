@@ -2,6 +2,8 @@
     width: 100%;
     background-color: white;
     overflow: hidden;
+    padding-bottom: 20vh;
+    position: relative;
 }
 
 .hero__container {
@@ -16,7 +18,7 @@
 }
 
 .hero__content-intro {
-    margin-top: 25vh;
+    margin-top: 7vh;
     color: var(--dark);
 }
 
@@ -63,7 +65,7 @@
 }
 
 .cat {
-    height: 350px;
+    height: 140px;
 }
 
 @media screen and (max-height: 600px) {
@@ -119,16 +121,24 @@
     }
 
     .cat {
-        height: 400px;
+        height: 300px;
     }
 }
 
 @media screen and (min-width: 900px) {
 
+    .section {
+        padding-bottom: 0;
+    }
+
     .hero__content-container {
         grid-template-columns: 1fr 1fr;
         gap: 50px;
         padding-right: 22%;
+    }
+    
+    .hero__content-intro {
+        margin-top: 25vh;
     }
 
     .txt {
@@ -141,6 +151,10 @@
 
     .catDiv {
         transform: translateX(20px);
+    }
+
+    .cat {
+        height: 350px;
     }
 }
 
