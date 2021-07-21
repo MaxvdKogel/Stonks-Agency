@@ -2,10 +2,16 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .catLicking {
+    width: 80%;
     max-width: 550px;
+}
+
+.catLicking > svg {
+    max-width: 100%;
 }
 
 .contact__container {
@@ -70,6 +76,11 @@
 }
 
 @media screen and (max-height:600px) {
+
+    .catLicking {
+        width: 100%;
+    }
+
     .contact__title {
         font-size: var(--f-s);
     }

@@ -152,9 +152,9 @@ const About = function () {
 
                 <div className={style["paragraph-container"]}>
                     <div className="inner">
-                        <p>Een jong en creatief duo die jouw online aanwezigheid een <em className="pink">boost</em> geeft. Van <em className="pink">websites</em> tot <em className="pink">web software</em>.</p>
+                        <p className={window.innerWidth < 1200 ? "fade-in" : ""}>Een jong en creatief duo die jouw online aanwezigheid een <em className="pink">boost</em> geeft. Van <em className="pink">websites</em> tot <em className="pink">web software</em>.</p>
 
-                        <p>Wij helpen onze clienten met het oplossen van <em className="pink">complexe automatisering</em> en het neerzetten van <em className="pink">memorabele</em> online identiteiten.</p>
+                        <p className={window.innerWidth < 1200 ? "fade-in" : ""}>Wij helpen onze clienten met het oplossen van <em className="pink">complexe automatisering</em> en het neerzetten van <em className="pink">memorabele</em> online identiteiten.</p>
                     </div>
                 </div>
 
