@@ -34,13 +34,19 @@ const Contact = function(props) {
         isMountedRef.current && contact_cta.addEventListener("mouseover", listeners.mouseover);
         isMountedRef.current && contact_cta.addEventListener("mouseout", listeners.mouseout);
 
-        lottie.loadAnimation({
-            container: document.querySelector("." + style["catLicking"]),
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: '/assets/lottie-animations/kat pootje.json'
-        })  
+        var promise = new Promise((resolve, reject) => {
+            lottie
+            .loadAnimation({
+                container: document.querySelector("." + style["catLicking"]),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '/assets/lottie-animations/kat pootje.json'
+            })    
+            .addEventListener("DOMLoaded", () => resolve())
+        });
+
+        Event.$emit("enqueueLoading", [promise]);
 
         return () => {
             isMountedRef.current = false;
@@ -59,11 +65,11 @@ const Contact = function(props) {
             <div className={`container fade-in ${style.contact__container}`}>
                 <div className={style.catLicking}></div>
                 <div className={`outer ${style.contact__col}`}>
-                    <h2 className={style.contact__title}>Klaar om in je bedrijf te <span className={`pink ${style.blue}`}>investeren</span>?</h2>
+                    <h2 className={style.contact__title}>Klaar om ook in je bedrijf te <span className={`pink ${style.blue}`}>investeren</span>?</h2>
                     <p className={style.contact__txt}>Samen maken we er iets moois van.</p>
                     
                     <div className={`cta__hover ${style.contact__ctaDiv}`}>
-                        <a className={`cta ${style.contact__cta}`} href="mailto: stront@gmail.com">
+                        <a className={`cta ${style.contact__cta}`} href="mailto: hello@stonks.agency">
                             <p className={`cta__txt ${style.cta__txt}`}>Contacteer ons</p>
                             <span className={`contact__cta-span ${style.ctaBg}`}></span>
                         </a>
