@@ -3,14 +3,14 @@ import useState from 'react-usestateref';
 import Logo from "../../assets/svg/Logo";
 import style from "./Loader.module.css";
 
-import detect from 'detect-browser';
-import { array } from "prop-types";
+import detect from 'browser-detect';
 
 const Loader = function() {
 
     const [isLoading, setLoadingState] = useState(true);
     const [loadingQueue, setLoadingQueue, loadingQueueGetter] = useState([]);
-    const id = Math.floor(100000 + Math.random() * 900000);
+    const browser = detect();  
+    const blockTouchEnd = (e) => e.preventDefault();
 
     useEffect(() => {
         /**
@@ -26,7 +26,13 @@ const Loader = function() {
     }, []);
 
     useEffect(() => {
-        if(!loadingQueueGetter.current.length) return setLoadingState(false);
+        if(!loadingQueueGetter.current.length) return (
+            setLoadingState(false),
+            document.body.classList.remove("scroll-lock"),
+            ( browser.name === "safari" ) && document.removeEventListener("ontouchend", blockTouchEnd)
+        );
+        ( browser.name === "safari" ) && document.addEventListener("ontouchend", blockTouchEnd);
+        document.body.classList.add("scroll-lock");
         setLoadingState(true);
 
         var arr = loadingQueueGetter.current.slice();

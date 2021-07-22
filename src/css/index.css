@@ -22,6 +22,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body.scroll-lock {
+    overflow: hidden !important;
+}
+
 a {
     color: var(--white);
     text-decoration: none;
