@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import style from './Quote2.module.css'
+import lazyLoad from '../../../../helpers/lazyLoad';
 
 const Quote2 = function() {
+
+    const img = useRef(null);
+
+    useEffect(() => {
+        Event.$emit("enqueueLoading", [lazyLoad([img.current])]);
+    }, []);
+
     return (
         <section className={`${style.section}`}>
 
             <div className={`container ${style.Quote2Container}`}>
 
                 <div className={`fade-in ${style["img-cover"]}`}>
-                    <img src="/assets/img/gsv-cover-logo.jpg" />
+                    <img ref={img} data-src="/assets/img/gsv-cover-logo.jpg" />
                 </div>
 
             </div>

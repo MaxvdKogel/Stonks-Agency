@@ -26,16 +26,24 @@ const Hero = function() {
             }
         };
 
-        isMountedRef.current && hero_cta.addEventListener("mouseover", listeners.mouseover);
-        isMountedRef.current && hero_cta.addEventListener("mouseout", listeners.mouseout);
+        if (isMountedRef.current) {
+            hero_cta.addEventListener("mouseover", listeners.mouseover);
+            hero_cta.addEventListener("mouseout", listeners.mouseout);
+        }
 
-        lottie.loadAnimation({
-            container: document.querySelector("." + style["sleepingCat"]),
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: '/assets/lottie-animations/slapende-kat-final-2.json'
+        var promise = new Promise((resolve, reject) => {
+            lottie
+            .loadAnimation({
+                container: document.querySelector("." + style["sleepingCat"]),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '/assets/lottie-animations/slapende-kat-final-2.json'
+            })
+            .addEventListener("DOMLoaded", () => resolve())
         });
+
+        Event.$emit("enqueueLoading", [promise]);
 
         return () => {
             isMountedRef.current = false;
@@ -54,7 +62,7 @@ const Hero = function() {
                         Een profesionele website is een <span className="pink investering">investering</span>.
                     </h1>
                     <p className={style.hero__txt}>
-                        Je bereikt meer klanten en bouwt vertrouwen in je bedrijf.
+                        Je bereikt meer klanten en bouwt een vertrouwen op in je bedrijf.
                     </p>
                     <div className={`cta__hover ${style.cta__container}`}>
                         <a href="mailto: hello@stonks.agency" className={`cta ${style.hero__cta}`}>

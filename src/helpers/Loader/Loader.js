@@ -1,19 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import useState from 'react-usestateref';
 import Logo from "../../assets/svg/Logo";
 import style from "./Loader.module.css";
+
+import detect from 'detect-browser';
+import { array } from "prop-types";
 
 const Loader = function() {
 
     const [isLoading, setLoadingState] = useState(true);
+    const [loadingQueue, setLoadingQueue, loadingQueueGetter] = useState([]);
+    const id = Math.floor(100000 + Math.random() * 900000);
 
     useEffect(() => {
+        /**
+         * Add new promise to queue [GLOBAL]
+         */
+        Event.$on("enqueueLoading", (new_items) => setLoadingQueue([...loadingQueueGetter.current, ...new_items]));
+        /**
+         * refresh queue [LOADER COMPONENT ONLY]
+         */
+        Event.$on("refreshQueue", (new_queue) => setLoadingQueue(new_queue));
 
-        Event.$on("loading", () => setLoadingState(true));
-        Event.$on("doneLoading", () => setLoadingState(false));
-
-        setTimeout(() => setLoadingState(false), 2000);
-
+        return () => (Event.$off("enqueueLoading"), Event.$off("refreshQueue"));
     }, []);
+
+    useEffect(() => {
+        if(!loadingQueueGetter.current.length) return setLoadingState(false);
+        setLoadingState(true);
+
+        var arr = loadingQueueGetter.current.slice();
+
+        arr.shift().then(() => Event.$emit("refreshQueue", arr));
+
+    }, [loadingQueue]);
 
     return (
         <div className={isLoading ? `${style.loader} ${style.active}` : style.loader}>

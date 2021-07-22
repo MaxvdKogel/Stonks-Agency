@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import useState from 'react-usestateref';
 
+import lazyLoad from "../../helpers/lazyLoad";
 
 import style from "./About.module.css";
 import { gsap } from "gsap/all";
@@ -19,9 +20,21 @@ const About = function () {
 
         var listener = () => setDeviceState(window.innerWidth >= 1200);
 
-        isMountedRef.current && window.addEventListener("resize", listener);
+        if (isMountedRef.current) {
+
+            var swap = setInterval(function() {
+                swapped && document.querySelector("." + style["about--media"]).classList.add(style.swap);
+                swapped || document.querySelector("." + style["about--media"]).classList.remove(style.swap);
+                swapped = !swapped;
+            }, 1000);
+
+            window.addEventListener("resize", listener);
+
+            Event.$emit("enqueueLoading", [lazyLoad([`.${style.doavid}`, `.${style.mank}`])]);
+        }
 
         return () => (
+            clearInterval(swap),
             window.removeEventListener("resize", listener),
             isMountedRef.current = false
         );
@@ -101,18 +114,6 @@ const About = function () {
         return () => document.removeEventListener("scroll", listener);
     }, [largeDevice]);
 
-    useEffect(() => {
-        if(!isMountedRef.current) return;
-
-        var swap = setInterval(function() {
-            swapped && document.querySelector("." + style["about--media"]).classList.add(style.swap);
-            swapped || document.querySelector("." + style["about--media"]).classList.remove(style.swap);
-            swapped = !swapped;
-        }, 1000);
-        
-        return () => clearInterval(swap);
-    }, []);
-
     return (
         <section className={style.about} style={{"--container-height": largeDevice ? (window.innerHeight * 6) + "px" : "auto"}}>
             <div className={["about--content", largeDevice ? "vp" : ""].join(" ")} style={{width: "100%"}} >
@@ -120,10 +121,10 @@ const About = function () {
                 <div className={style["about--intro-contianer"]}>
                     <div className={style["about--media"]}>
                         <div className={[style.img, style.top].join(" ")}>
-                            <img className={style.doavid} src="/assets/img/david.jpg" />
+                            <img className={style.doavid} data-src="/assets/img/david.jpg" />
                         </div>
                         <div className={[style.img, style.bottom].join(" ")}>
-                            <img className={style.mank} src="/assets/img/mank.jpeg" />
+                            <img className={style.mank} data-src="/assets/img/mank.jpeg" />
                         </div>
                     </div>
 

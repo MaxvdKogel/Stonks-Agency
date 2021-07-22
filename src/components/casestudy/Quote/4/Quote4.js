@@ -41,7 +41,7 @@ const Quote4 = function() {
             <div className={`container`}>
 
                 <div className={`fade-in ${style["img-cover"]} ${style["vid-cover"]}`}>
-                    <video style={{transform:"scaleX(1.001)"}} muted loop data-controls>
+                    <video poster="/assets/img/poster-demo.jpg" style={{transform:"scaleX(1.001)"}} muted loop data-controls>
                         <source src="/assets/vid/gsv-cover-demo.mp4" type="video/mp4" />
                     </video>
 
@@ -75,15 +75,15 @@ const Quote4 = function() {
                         <p className={`${style.p}`}>
                             Om de veiligheid van gevoelige data
                             te waarborgen hebben we een
-                            uitgebreide authorisatie/authenticatie
-                            toegevoegd. Denk hierbij aan
+                            uitgebreide authenticatie/autorisatie
+                            toegevoegd. Denk hierbij bijvoorbeeld aan
                             twee factor authenticatie (2FA).
                         </p>
                     </div>   
                 </div>   
 
                 <div className={`fade-in ${style["vid-cover"]} ${style["vid-cover--bottom"]}`}>
-                    <video muted loop data-controls>
+                    <video poster="/assets/img/poster-2fa.jpg" muted loop data-controls>
                         <source src="/assets/vid/gsv-cover-2fa.mp4" type="video/mp4" />
                     </video>
 

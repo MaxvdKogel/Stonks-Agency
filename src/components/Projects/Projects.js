@@ -8,14 +8,21 @@ import style from './Projects.module.css'
 const Projects = function() {
 
     useEffect(() => {
-        lottie.loadAnimation({
-            container: document.querySelector("." + style["standingCat"]),
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: '/assets/lottie-animations/Kat staand.json'
-        })  
-      }, [])
+        var promise = new Promise((resolve, reject) => {
+            lottie
+            .loadAnimation({
+                container: document.querySelector("." + style["standingCat"]),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '/assets/lottie-animations/Kat staand.json'
+            })      
+            .addEventListener("DOMLoaded", () => resolve())
+        });
+
+        Event.$emit("enqueueLoading", [promise]);
+
+      }, []);
 
     return (
         <section className={style.projects}>
