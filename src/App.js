@@ -11,11 +11,11 @@ window.Event = new Vue({});
 const App = function() {
     return (
         <Router>
+            <Loader />
             <Switch>
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/casestudy/groningen-stad-vastgoed"><Vastgoed /></Route>
             </Switch>
-            <Loader />
         </Router>
     )
 }
