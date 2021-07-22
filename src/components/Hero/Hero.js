@@ -57,7 +57,7 @@ const Hero = function() {
                         Je bereikt meer klanten en bouwt vertrouwen in je bedrijf.
                     </p>
                     <div className={`cta__hover ${style.cta__container}`}>
-                        <a href="mailto: stront@gmail.com" className={`cta ${style.hero__cta}`}>
+                        <a href="mailto: hello@stonks.agency" className={`cta ${style.hero__cta}`}>
                             <p className="cta__txt">Contacteer ons</p>
                             <span className="hero__cta-span"></span>
                         </a>

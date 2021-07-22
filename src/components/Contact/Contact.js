@@ -63,7 +63,7 @@ const Contact = function(props) {
                     <p className={style.contact__txt}>Samen maken we er iets moois van.</p>
                     
                     <div className={`cta__hover ${style.contact__ctaDiv}`}>
-                        <a className={`cta ${style.contact__cta}`} href="mailto: stront@gmail.com">
+                        <a className={`cta ${style.contact__cta}`} href="mailto: hello@stonks.agency">
                             <p className={`cta__txt ${style.cta__txt}`}>Contacteer ons</p>
                             <span className={`contact__cta-span ${style.ctaBg}`}></span>
                         </a>
