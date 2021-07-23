@@ -30,7 +30,9 @@ const About = function () {
 
             window.addEventListener("resize", listener);
 
-            Event.$emit("enqueueLoading", [lazyLoad([`.${style.doavid}`, `.${style.mank}`, `.${style.gif}`])]);
+            Event.$emit("enqueueLoading", [
+                window.innerWidth>1200?lazyLoad([`.${style.doavid}`, `.${style.mank}`]):lazyLoad([`.${style.doavid}`, `.${style.mank}`, `.${style.gif}`])
+            ]);
         }
 
         return () => (
