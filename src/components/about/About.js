@@ -47,8 +47,8 @@ const About = function () {
 
         var el = document.querySelector("." + style.about);
 
-        if (deviceStateGetter.current) {
-            gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: document.querySelector("." + style["paragraph-container"]).clientHeight });
+        if (deviceStateGetter.current) gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: document.querySelector("." + style["paragraph-container"]).clientHeight });
+        if (!deviceStateGetter.current) {
             gsap.killTweensOf("." + style["paragraph-container"] + " > .inner > p");
             gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: 0});
             document.querySelector(".about--content").style.cssText = "";
