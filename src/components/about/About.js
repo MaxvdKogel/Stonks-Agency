@@ -30,7 +30,7 @@ const About = function () {
 
             window.addEventListener("resize", listener);
 
-            Event.$emit("enqueueLoading", [lazyLoad([`.${style.doavid}`, `.${style.mank}`])]);
+            Event.$emit("enqueueLoading", [lazyLoad([`.${style.doavid}`, `.${style.mank}`, `.${style.gif}`])]);
         }
 
         return () => (
@@ -41,16 +41,16 @@ const About = function () {
     }, []);
     
     useEffect(() => {
-        if(!isMountedRef.current) return;
+        if (!isMountedRef.current) return;
 
         var el = document.querySelector("." + style.about);
 
-        deviceStateGetter.current && gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: document.querySelector("." + style["paragraph-container"]).clientHeight });
-        deviceStateGetter.current || (
-            gsap.killTweensOf("." + style["paragraph-container"] + " > .inner > p"),
-            gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: 0}),
-            document.querySelector(".about--content").style.cssText = ""
-        );
+        if (deviceStateGetter.current) {
+            gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: document.querySelector("." + style["paragraph-container"]).clientHeight });
+            gsap.killTweensOf("." + style["paragraph-container"] + " > .inner > p");
+            gsap.set("." + style["paragraph-container"] + " > .inner > p", { y: 0});
+            document.querySelector(".about--content").style.cssText = "";
+        };
 
         var listener = () => {
 
@@ -138,7 +138,7 @@ const About = function () {
                                 </svg>
                             </div>
                         ) : (
-                            <img className={style.gif} src="/assets/img/stonks.gif"></img>
+                            <img className={style.gif} data-src="/assets/img/stonks.gif" />
                         )}
                     </div>
 

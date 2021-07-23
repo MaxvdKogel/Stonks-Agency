@@ -29,10 +29,15 @@
 }
 
 .logo {
+    position: relative;
     height: 60px;
 }
 
 .logo > path {
+    display: none;
+}
+
+.logo > g:nth-child(2) {
     display: none;
 }
 
@@ -88,4 +93,11 @@
         transform: rotate(450deg);
         stroke-dashoffset: 314 !important; 
     }
+}
+
+.gif {
+    position: absolute;
+    left: 50%;
+    transform: translate(-73%, -18%);
+    width: 66px;
 }

@@ -44,6 +44,7 @@ const Loader = function() {
     return (
         <div className={isLoading ? `${style.loader} ${style.active}` : style.loader}>
             <div className={style["loader--center"]}>
+                <img className={style.gif} src="/assets/img/stonks.gif" />
                 <Logo class={style.logo} />
             </div>
             <div className={style.container}>
