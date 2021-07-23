@@ -65,6 +65,11 @@
     transition: all .4s cubic-bezier(0.78, -0.18, 0, 1.38);
 }
 
+.gif {
+    position: absolute;
+    z-index: 0;
+}
+
 .about--media > .img {
     position: absolute;
     border-radius: 20px;
@@ -189,7 +194,7 @@
         transform: translate(48%, -45%) scale(1) skew(4deg, -22deg) rotate(0deg);
     }
 
-    .animation {
+    .animation, .gif {
         top: 0;
         right: 0;
 
@@ -224,7 +229,7 @@
         transform: translate(40%, -35%) scale(1) rotate(0deg);
     }
 
-    .animation {
+    .animation, .gif {
         width: 120px;
 
         transform: translate(-40%, 70%);
@@ -272,7 +277,7 @@
         transform: translate(20%, 10%) scale(1) rotate(0deg)
     }
 
-    .animation {
+    .animation, .gif {
         width: 200px;
 
         transform: translate(-50%, 100%) scaleY(0);
