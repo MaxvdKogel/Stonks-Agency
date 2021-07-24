@@ -42,7 +42,7 @@ const Quote4 = function() {
 
                 <div className={`fade-in ${style["img-cover"]} ${style["vid-cover"]}`}>
                     <video poster="/assets/img/poster-demo.jpg" style={{transform:"scaleX(1.001)"}} muted loop data-controls>
-                        <source src="/assets/vid/gsv-cover-demo.mp4" type="video/mp4" />
+                        <source src="/assets/vid/gsv-cover-demo-edited.mp4" type="video/mp4" />
                     </video>
 
                     <div className="controls">
