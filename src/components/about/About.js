@@ -105,7 +105,7 @@ const About = function () {
             /**
              * Scrolled past about section
              */
-            (scrolledPixels >= bcr.height) && (
+            (scrolledPixels >= bcr.height - 10) && (
                 document.querySelector(".about--content").style.cssText = "position: absolute; bottom: 0; left: 0; right: 0;"
             )
     
